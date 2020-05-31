@@ -3,9 +3,13 @@
  */
 package xsystem.ng;
 
+import xsystem.ng.Layers.Symbol;
+
 public class Library {
     public boolean someLibraryMethod() {
         System.out.println("Works!");
+        Symbol x = new Symbol('x');
+        System.out.println(x);
         return true;
     }
 }

@@ -27,7 +27,10 @@ public class Utils {
             ChiSquareTest chi = new ChiSquareTest();
             double[] exp = new double[observed.size()];
             long[] obs = new long[observed.size()];
-            for(int i = 0; i< observed.size(); i++) obs[i] = observed.get(i).longValue();
+            for(int i = 0; i< observed.size(); i++){
+                obs[i] = observed.get(i).longValue();
+                exp[i] = 1.0;
+            }
             return chi.chiSquareTest(exp, obs, 0.01);
         }
     }
