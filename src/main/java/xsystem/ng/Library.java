@@ -10,6 +10,8 @@ public class Library {
         System.out.println("Works!");
         Symbol x = new Symbol('x');
         System.out.println(x);
+        Symbol y = x.addChar('c');
+        System.out.println(y);
         return true;
     }
 }
