@@ -39,4 +39,8 @@ public class Config {
     public Boolean tts = true;
     public Double capturePct = 0.8;
 
+    public double neededSampleSize(double std){
+        return Math.pow(1.96*std/0.5, 2.0);
+    }
+
 }

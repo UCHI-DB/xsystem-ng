@@ -4,14 +4,17 @@
 package xsystem.ng;
 
 import xsystem.ng.Layers.Symbol;
+import xsystem.ng.Layers.Token;
 
 public class Library {
     public boolean someLibraryMethod() {
         System.out.println("Works!");
         Symbol x = new Symbol('x');
         System.out.println(x);
-        Symbol y = x.addChar('1');
+        Symbol y = x.addChar('y');
         System.out.println(y);
+        Token t = new Token();
+        System.out.println(t.learnToken("xyz").learnToken("xyz").learnToken("1234"));
         return true;
     }
 }

@@ -23,15 +23,15 @@ public class Symbol {
 
 //Symbol Layer of the XStructure
 
-	HashMap<Character, Double> charHist;
+	public HashMap<Character, Double> charHist;
 
-	HashMap<CharClass, ArrayList<Character> > cclassHist;
+	public HashMap<CharClass, ArrayList<Character> > cclassHist;
 
-	int total;
+	public int total;
 
-	XClass representation;
+	public XClass representation;
 
-	ArrayList<String> symbolStringGenerator;
+	public ArrayList<String> symbolStringGenerator;
 
 	public Symbol(char c) {
 
@@ -73,27 +73,33 @@ public class Symbol {
 
 		Utils utils = new Utils();
 
-		HashMap<Character, Double> _charHist = charHist;
-		HashMap<CharClass, ArrayList<Character> > _cclassHist = cclassHist;
-		CharClass charClass = utils.getCharacterClass(c);
+		HashMap<Character, Double> _charHist = new HashMap<>();
+		_charHist.putAll(charHist);
 
 		if(_charHist.containsKey(c)){
-
-			_charHist.replace(c, _charHist.get(c)+1);
-			ArrayList<Character> newValue = _cclassHist.get(charClass);
-			newValue.add(c);
-			_cclassHist.replace(charClass, newValue);
-
+			double val = charHist.get(c);
+			_charHist.put(c, val+1.0);
 		}
-
-		else{
-
+		else
 			_charHist.put(c, 1.0);
+		
+		HashMap<CharClass, ArrayList<Character> > _cclassHist = new HashMap<>();
+		_cclassHist.putAll(cclassHist);
+
+		CharClass charClass = utils.getCharacterClass(c);
+
+		if(_cclassHist.containsKey(charClass)){
+			ArrayList<Character> lst = new ArrayList<>();
+			lst.addAll(_cclassHist.get(charClass));
+			lst.add(c);
+			_cclassHist.put(charClass, lst);
+		}
+		else{
 			ArrayList<Character> lst = new ArrayList<>();
 			lst.add(c);
 			_cclassHist.put(charClass, lst);
-
 		}
+
 		int _total = total+1;
 
 		return new Symbol(_charHist, _cclassHist, _total);
@@ -138,6 +144,7 @@ public class Symbol {
 
 					Map<Character, Double> sorted = trucatedHist.entrySet().stream().sorted(comparingByValue()).collect( toMap(e -> e.getKey(), e -> e.getValue(), (e1, e2) -> e2, LinkedHashMap::new));
 					AtomicReference<Double> atomicSum = new AtomicReference<>(0.0);
+
 					// Cumilative Sum
 					sorted.entrySet().forEach(e -> e.setValue(atomicSum.accumulateAndGet(e.getValue(), (x, y) -> x + y))); 
 					double cutoff = (1-config.capturePct)*(new ArrayList<Double>(trucatedHist.values()).stream().mapToDouble(a -> a).sum());
@@ -154,7 +161,6 @@ public class Symbol {
 		}
 
 		//Multiple Characters
-
 		else{
 
 			HashMap<Character, Double> resMap = new HashMap<>();
@@ -169,10 +175,12 @@ public class Symbol {
 	}
 
 	public double scoreChar (char c){
+
 		Utils utils = new Utils();
 		if(!(cclassHist.containsKey(utils.getCharacterClass(c)))) return 1.0;
 		else if( !(charHist.containsKey(c)) && !(representation.isClass()) ) return 0.5;
 		else return 0.0;
+		
 	}
 
 	public String toString() {return representation.rep();}
