@@ -11,6 +11,8 @@ import xsystem.ng.Support.Wrapper;
 
 public class Token {
 
+//Token Layer of the XStructure
+
 	public ArrayList<Symbol> symbols;
 
 	public Boolean doneAdding;
@@ -194,7 +196,7 @@ public class Token {
 		for(XClass x : representation){
 			res += x.toString();
 		}
-		
+
 		return res;
 	}
 }

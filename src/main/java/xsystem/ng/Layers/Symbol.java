@@ -105,6 +105,7 @@ public class Symbol {
 		return new Symbol(_charHist, _cclassHist, _total);
 	}
 
+	//Getting the representation of a Symbol
 	private XClass repfn(HashMap<Character, Double> _charHist, HashMap<CharClass, ArrayList<Character> > _cclassHist, int _total){
 
 		Config config = new Config();
@@ -127,21 +128,22 @@ public class Symbol {
 				HashMap<Character, Double> trucatedHist = new HashMap<>();
 
 				_charHist.forEach((k,v) -> {
-					if(utils.getCharacterClass(k) == maxSym) trucatedHist.put(k, v);
+					if(utils.getCharacterClass(k).rep() == maxSym.rep()) trucatedHist.put(k, v);
 				});
 
 				HashMap<Character, Double> totalHist = new HashMap<>();
-				totalHist.putAll(trucatedHist);
 				totalHist.putAll(maxSym.baseHist());
+				totalHist.putAll(trucatedHist);
 
 				// Null hypothesis accepted
 				if(!utils.significant(new ArrayList<Double>(totalHist.values()))) return maxSym.toXClass();
 
 				// Only one character
-				else if(trucatedHist.size() == 1) return new X_SPEC(String.valueOf(trucatedHist.keySet().iterator().next()));
+				if(trucatedHist.size() == 1) return new X_SPEC(String.valueOf(trucatedHist.keySet().iterator().next()));
 
+				//Multiple Characters
 				else{
-
+					
 					Map<Character, Double> sorted = trucatedHist.entrySet().stream().sorted(comparingByValue()).collect( toMap(e -> e.getKey(), e -> e.getValue(), (e1, e2) -> e2, LinkedHashMap::new));
 					AtomicReference<Double> atomicSum = new AtomicReference<>(0.0);
 
@@ -160,7 +162,6 @@ public class Symbol {
 			}
 		}
 
-		//Multiple Characters
 		else{
 
 			HashMap<Character, Double> resMap = new HashMap<>();

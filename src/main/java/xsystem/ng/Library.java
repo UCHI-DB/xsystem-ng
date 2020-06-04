@@ -3,6 +3,7 @@
  */
 package xsystem.ng;
 
+import xsystem.ng.Layers.Branch;
 import xsystem.ng.Layers.Symbol;
 import xsystem.ng.Layers.Token;
 
@@ -14,7 +15,10 @@ public class Library {
         Symbol y = x.addChar('y');
         System.out.println(y);
         Token t = new Token();
-        System.out.println(t.learnToken("xyz").learnToken("xyz").learnToken("1234"));
+        System.out.println(t.learnToken("x8z").learnToken("x8z").learnToken("x8z").learnToken("x8tT22233HHHFLJ").tokenStringGenerator);
+        Branch b = new Branch("abc/sahbk/n738642ad/da");
+        System.out.println(b.learnString("n738642ad/sahbk/njkad/da"));
+        System.out.println(b.merged(b, b.learnString("n738642ad/sahbk/njkad/da")));
         return true;
     }
 }
