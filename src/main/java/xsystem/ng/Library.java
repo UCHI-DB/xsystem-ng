@@ -28,7 +28,7 @@ public class Library {
         lines.add("shrey-arth");
         lines.add("11/2wfh-sjhacs");
         System.out.println(xst.addNewLines(lines));
-        System.out.println(xst.addLine("lines23890//--"));
+        System.out.println(xst.addNewLines(lines).computeOutlierScore("shrey-arth"));
         return true;
     }
 }
