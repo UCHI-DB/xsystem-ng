@@ -3,9 +3,12 @@
  */
 package xsystem.ng;
 
+import java.util.ArrayList;
+
 import xsystem.ng.Layers.Branch;
 import xsystem.ng.Layers.Symbol;
 import xsystem.ng.Layers.Token;
+import xsystem.ng.Layers.XStructure;
 
 public class Library {
     public boolean someLibraryMethod() {
@@ -19,6 +22,13 @@ public class Library {
         Branch b = new Branch("abc/sahbk/n738642ad/da");
         System.out.println(b.learnString("n738642ad/sahbk/njkad/da"));
         System.out.println(b.merged(b, b.learnString("n738642ad/sahbk/njkad/da")));
+        XStructure xst = new XStructure();
+        ArrayList<String> lines = new ArrayList<>();
+        lines.add("ip/s/ita");
+        lines.add("shrey-arth");
+        lines.add("11/2wfh-sjhacs");
+        System.out.println(xst.addNewLines(lines));
+        System.out.println(xst.addLine("lines23890//--"));
         return true;
     }
 }

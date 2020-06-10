@@ -3,7 +3,7 @@ package xsystem.ng.Support;
 import java.util.ArrayList;
 
 public class Config {
-    public int maxBranches = 7;
+    public int maxBranches = -1;
     public double branchingSeed = 0.1;
     
     private char[] getsplchars(){

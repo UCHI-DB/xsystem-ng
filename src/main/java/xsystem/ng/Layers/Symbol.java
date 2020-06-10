@@ -139,7 +139,7 @@ public class Symbol {
 				if(!utils.significant(new ArrayList<Double>(totalHist.values()))) return maxSym.toXClass();
 
 				// Only one character
-				if(trucatedHist.size() == 1) return new X_SPEC(String.valueOf(trucatedHist.keySet().iterator().next()));
+				else if(trucatedHist.size() == 1) return new X_SPEC(String.valueOf(trucatedHist.keySet().iterator().next()));
 
 				//Multiple Characters
 				else{
