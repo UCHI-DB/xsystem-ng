@@ -35,13 +35,11 @@ public class Symbol {
 
 	public Symbol(char c) {
 
-		Utils utils = new Utils();
-
 		HashMap<Character, Double> _charHist = new HashMap<Character, Double>();
 		_charHist.put(c, 1.0);
 
 		HashMap<CharClass, ArrayList<Character>> _cclassHist = new HashMap<CharClass, ArrayList<Character>>();
-		_cclassHist.put(utils.getCharacterClass(c), new ArrayList<>(Arrays.asList(c)));
+		_cclassHist.put(Utils.getCharacterClass(c), new ArrayList<>(Arrays.asList(c)));
 
 		int _total = 1;
 
@@ -71,8 +69,6 @@ public class Symbol {
 
 	public Symbol addChar(char c){
 
-		Utils utils = new Utils();
-
 		HashMap<Character, Double> _charHist = new HashMap<>();
 		_charHist.putAll(charHist);
 
@@ -86,7 +82,7 @@ public class Symbol {
 		HashMap<CharClass, ArrayList<Character> > _cclassHist = new HashMap<>();
 		_cclassHist.putAll(cclassHist);
 
-		CharClass charClass = utils.getCharacterClass(c);
+		CharClass charClass = Utils.getCharacterClass(c);
 
 		if(_cclassHist.containsKey(charClass)){
 			ArrayList<Character> lst = new ArrayList<>();
@@ -108,9 +104,6 @@ public class Symbol {
 	//Getting the representation of a Symbol
 	private XClass repfn(HashMap<Character, Double> _charHist, HashMap<CharClass, ArrayList<Character> > _cclassHist, int _total){
 
-		Config config = new Config();
-		Utils utils = new Utils();
-
 		HashMap<CharClass, Double> symbolPcts = new HashMap<>();
 		_cclassHist.forEach((k, v) -> {
 			double val = (double)v.size()/_total;
@@ -128,7 +121,7 @@ public class Symbol {
 				HashMap<Character, Double> trucatedHist = new HashMap<>();
 
 				_charHist.forEach((k,v) -> {
-					if(utils.getCharacterClass(k).rep() == maxSym.rep()) trucatedHist.put(k, v);
+					if(Utils.getCharacterClass(k).rep() == maxSym.rep()) trucatedHist.put(k, v);
 				});
 
 				HashMap<Character, Double> totalHist = new HashMap<>();
@@ -136,7 +129,7 @@ public class Symbol {
 				totalHist.putAll(trucatedHist);
 
 				// Null hypothesis accepted
-				if(!utils.significant(new ArrayList<Double>(totalHist.values()))) return maxSym.toXClass();
+				if(!Utils.significant(new ArrayList<Double>(totalHist.values()))) return maxSym.toXClass();
 
 				// Only one character
 				else if(trucatedHist.size() == 1) return new X_SPEC(String.valueOf(trucatedHist.keySet().iterator().next()));
@@ -149,7 +142,7 @@ public class Symbol {
 
 					// Cumilative Sum
 					sorted.entrySet().forEach(e -> e.setValue(atomicSum.accumulateAndGet(e.getValue(), (x, y) -> x + y))); 
-					double cutoff = (1-config.capturePct)*(new ArrayList<Double>(trucatedHist.values()).stream().mapToDouble(a -> a).sum());
+					double cutoff = (1-Config.capturePct)*(new ArrayList<Double>(trucatedHist.values()).stream().mapToDouble(a -> a).sum());
 					ArrayList<String> charToUse = new ArrayList<>();
 
 					sorted.forEach((k,v) -> {
@@ -165,10 +158,10 @@ public class Symbol {
 		else{
 
 			HashMap<Character, Double> resMap = new HashMap<>();
-			resMap.putAll(utils.asciiMap());
+			resMap.putAll(Utils.asciiMap());
 			resMap.putAll(_charHist);
 
-			if(!utils.significant(new ArrayList<Double>(resMap.values())))
+			if(!Utils.significant(new ArrayList<Double>(resMap.values())))
 				return new X_ANY();
 			else
 				return maxSym.toXClass();
@@ -177,8 +170,7 @@ public class Symbol {
 
 	public double scoreChar (char c){
 
-		Utils utils = new Utils();
-		if(!(cclassHist.containsKey(utils.getCharacterClass(c)))) return 1.0;
+		if(!(cclassHist.containsKey(Utils.getCharacterClass(c)))) return 1.0;
 		else if( !(charHist.containsKey(c)) && !(representation.isClass()) ) return 0.5;
 		else return 0.0;
 		

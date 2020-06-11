@@ -11,7 +11,7 @@ public class X_NUM implements XClass {
     }
 
     public ArrayList<Character> domain(){
-        char[] numbers = new Config().numbers;
+        char[] numbers = Config.numbers;
         ArrayList<Character> charlst = new ArrayList<Character>();
         for(char ch: numbers){
             charlst.add(ch);

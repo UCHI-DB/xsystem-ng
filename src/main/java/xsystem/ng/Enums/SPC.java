@@ -8,16 +8,13 @@ import xsystem.ng.Support.Config;
 public class SPC implements CharClass {
     String str;
     String realStr;
-    {
-        Config config = new Config();
-        if(new String(config.upperCaseChar).contains(str))
-            realStr = str;
-        else
-            realStr = "*";
-    }
 
     public SPC(String str) {
-		this.str = str;
+        this.str = str;
+        if(new String(Config.upperCaseChar).contains(str))
+            this.realStr = str;
+        else
+            this.realStr = "*";
     }
     
     public String rep(){

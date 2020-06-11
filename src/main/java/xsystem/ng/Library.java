@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import xsystem.ng.Layers.Branch;
 import xsystem.ng.Layers.Symbol;
 import xsystem.ng.Layers.Token;
-import xsystem.ng.Layers.XStructure;
 
 public class Library {
     public boolean someLibraryMethod() {
@@ -26,6 +25,9 @@ public class Library {
         ArrayList<String> lines = new ArrayList<>();
         lines.add("ip/s/ita");
         lines.add("shrey-arth");
+        lines.add("11/2wfh-sjhacs");
+        lines.add("11/2wfh-sjhacs");
+        lines.add("11/2wfh-sjhacs");
         lines.add("11/2wfh-sjhacs");
         System.out.println(xst.addNewLines(lines));
         System.out.println(xst.addNewLines(lines).computeOutlierScore("shrey-arth"));

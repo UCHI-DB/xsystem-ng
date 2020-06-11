@@ -3,10 +3,26 @@ package xsystem.ng.Support;
 import java.util.ArrayList;
 
 public class Config {
-    public int maxBranches = -1;
-    public double branchingSeed = 0.1;
+    public static int maxBranches = 7;
+    public static double branchingSeed = 0.1;
+    public static char[] splChars;
+    public static char[] upperCaseChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
+    public static char[] lowerCaseChar = "abcdefghijklmnopqrstuvwxyz".toCharArray();
+    public static char[] numbers = "0123456789".toCharArray();
+    public static int inc = 100;
+    public static Boolean tts = true;
+    public static Double capturePct = 0.8;
+    
+
+    public Config(){
+        Config.splChars = getsplchars();
+    }
     
     private char[] getsplchars(){
+
+        if(splChars != null)
+            return splChars;
+
         ArrayList<Character> r = new ArrayList<Character>();
         for(int i = 0; i<=47; i++){
             char c = (char)i;
@@ -29,17 +45,10 @@ public class Config {
             res[i] = r.get(i).charValue();
         }
         return res;
+
     }
 
-    public char[] splChars = getsplchars();
-    public char[] upperCaseChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
-    public char[] lowerCaseChar = "abcdefghijklmnopqrstuvwxyz".toCharArray();
-    public char[] numbers = "0123456789".toCharArray();
-    public int inc = 100;
-    public Boolean tts = true;
-    public Double capturePct = 0.8;
-
-    public double neededSampleSize(double std){
+    public static double neededSampleSize(double std){
         return Math.pow(1.96*std/0.5, 2.0);
     }
 

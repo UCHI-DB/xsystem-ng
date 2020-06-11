@@ -12,7 +12,7 @@ public class X_LCC implements XClass {
     }
 
     public ArrayList<Character> domain(){
-        char[] lowerCaseChar = new Config().lowerCaseChar;
+        char[] lowerCaseChar = Config.lowerCaseChar;
         ArrayList<Character> charlst = new ArrayList<Character>();
         for(char ch: lowerCaseChar){
             charlst.add(ch);

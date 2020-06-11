@@ -23,7 +23,7 @@ public class Token {
 
 	public ArrayList<Double> archive;
 
-	private final boolean tryToStop = new Config().tts;
+	private final boolean tryToStop = Config.tts;
 
 	public ArrayList<String> tokenStringGenerator;
 
@@ -82,9 +82,7 @@ public class Token {
 			lst.add(strList);
 		}
 
-		Utils utils = new Utils();
-
-		ArrayList<Wrapper> res = utils.mergeStreams(lst);
+		ArrayList<Wrapper> res = Utils.mergeStreams(lst);
 		ArrayList<String> result = new ArrayList<>();
 
 		for(Wrapper w : res){
@@ -116,8 +114,6 @@ public class Token {
 
 		else{
 
-			Config config = new Config();
-
 			double tokenScore = 0;
 			for(int i=0; i<token.length() && i<symbols.size();i++){
 				tokenScore += symbols.get(i).scoreChar(token.charAt(i));
@@ -137,10 +133,10 @@ public class Token {
 			DescriptiveStatistics stats = new DescriptiveStatistics();
 			for(double d : _history) stats.addValue(d);
 
-			if(_history.size() % config.inc == 0) _stdDev = stats.getStandardDeviation();
+			if(_history.size() % Config.inc == 0) _stdDev = stats.getStandardDeviation();
 			else _stdDev = stdDev;
 
-			Boolean _doneAdding = config.neededSampleSize(_stdDev) < _history.size();
+			Boolean _doneAdding = Config.neededSampleSize(_stdDev) < _history.size();
 
 			ArrayList<Double> _archive = new ArrayList<>();
 			if(_doneAdding){
@@ -173,9 +169,7 @@ public class Token {
 			score += symbols.get(i).scoreChar(token.charAt(i));
 		}
 
-		if(score == 0) return 0;
-		else if(score > 0) return score;
-		else return 1.0;
+		return score;
 
 	}
 

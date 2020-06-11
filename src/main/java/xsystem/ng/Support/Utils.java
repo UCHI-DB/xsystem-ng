@@ -14,16 +14,19 @@ import xsystem.ng.Enums.UCC;
 public class Utils {
 
     //Returns Character Class of given character
-    public CharClass getCharacterClass(char c) {
-        Config config = new Config();
-        if(new String(config.upperCaseChar).contains(Character.toString(c))) return new UCC();
-        else if(new String(config.lowerCaseChar).contains(Character.toString(c))) return new LCC();
-        else if(new String(config.numbers).contains(Character.toString(c))) return new NUM();
+    public static CharClass getCharacterClass(char c) {
+        new Config();
+        if(new String(Config.upperCaseChar).contains(Character.toString(c)))
+            return new UCC();
+        else if(new String(Config.lowerCaseChar).contains(Character.toString(c)))
+            return new LCC();
+        else if(new String(Config.numbers).contains(Character.toString(c)))
+            return new NUM();
         else return new SPC(Character.toString(c));
     }
 
     //Performs Chi-Square test expecting a uniform distribution
-    public Boolean significant(ArrayList<Double> observed) {
+    public static Boolean significant(ArrayList<Double> observed) {
         if(observed.size()<2) return false;
         else{
             ChiSquareTest chi = new ChiSquareTest();
@@ -37,24 +40,24 @@ public class Utils {
         }
     }
 
-    public HashMap<Character, Double> asciiMap() {
+    public static HashMap<Character, Double> asciiMap() {
         HashMap<Character, Double> asciMap = new HashMap<>();
         for(int i=0; i<=256; i++) asciMap.put((char)i, 0.0);
         return asciMap;
     }
 
-    public ArrayList<Wrapper> mergeStreams(ArrayList<ArrayList<Wrapper>> streams){
+    public static ArrayList<Wrapper> mergeStreams(ArrayList<ArrayList<Wrapper>> streams){
         int next = 0;
         Boolean done = true;
-        return mergeStreams(streams,next,done);
+        return mergeStreams(streams, next, done);
     }
 
-    public ArrayList<Wrapper> mergeStreams(ArrayList<ArrayList<Wrapper>> streams, int next){
+    public static ArrayList<Wrapper> mergeStreams(ArrayList<ArrayList<Wrapper>> streams, int next) {
         Boolean done = true;
-        return mergeStreams(streams,next,done);
+        return mergeStreams(streams, next, done);
     }
 
-    public ArrayList<Wrapper> mergeStreams(ArrayList<ArrayList<Wrapper>> streams, int next, Boolean done){
+    public static ArrayList<Wrapper> mergeStreams(ArrayList<ArrayList<Wrapper>> streams, int next, Boolean done) {
         if(streams.isEmpty())
             return new ArrayList<Wrapper>();
         else{

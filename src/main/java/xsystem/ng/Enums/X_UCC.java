@@ -12,7 +12,7 @@ public class X_UCC implements XClass {
     }
 
     public ArrayList<Character> domain(){
-        char[] upperCaseChar = new Config().upperCaseChar;
+        char[] upperCaseChar = Config.upperCaseChar;
         ArrayList<Character> charlst = new ArrayList<Character>();
         for(char ch: upperCaseChar){
             charlst.add(ch);

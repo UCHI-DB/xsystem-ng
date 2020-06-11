@@ -1,4 +1,4 @@
-package xsystem.ng.Layers;
+package xsystem.ng;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -13,6 +13,7 @@ import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics;
 import org.javatuples.Pair;
 import org.javatuples.Triplet;
 
+import xsystem.ng.Layers.Branch;
 import xsystem.ng.Support.Config;
 import xsystem.ng.Support.Utils;
 import xsystem.ng.Support.Wrapper;
@@ -37,11 +38,9 @@ public class XStructure {
 
     public XStructure(){
 
-        Config config = new Config();
-
         this.branches = new HashMap<>();
         this.lines = new ArrayList<>();
-        this.branchingThreshold = config.branchingSeed;
+        this.branchingThreshold = Config.branchingSeed;
         this.history = new ArrayList<>();
         this.tokensGenerator = tknsGen(branches);
         this.hingesGenerator = hngGen(branches);
@@ -51,12 +50,10 @@ public class XStructure {
 
     public XStructure(ArrayList<String> _lines, HashMap<Branch, Double> _branches, double _bThresh, ArrayList<Double> _history){
 
-        Config config = new Config();
-
         this.branches = _branches;
-        this.lines = (config.tts) ? _lines : new ArrayList<String>();
+        this.lines = (Config.tts) ? _lines : new ArrayList<String>();
         this.branchingThreshold = _bThresh;
-        this.history = (config.tts) ? _history : new ArrayList<Double>();
+        this.history = (Config.tts) ? _history : new ArrayList<Double>();
         this.tokensGenerator = tknsGen(_branches);
         this.hingesGenerator = hngGen(_branches);
         this.minHashStringGenerator = minHashGen(tknsGen(_branches), hngGen(_branches));
@@ -80,9 +77,7 @@ public class XStructure {
             lst.add(wrList);
         });
 
-        Utils utils = new Utils();
-
-        ArrayList<Wrapper> res = utils.mergeStreams(lst);
+        ArrayList<Wrapper> res = Utils.mergeStreams(lst);
         ArrayList<String> result = new ArrayList<>();
 
         for(Wrapper w : res){
@@ -110,9 +105,7 @@ public class XStructure {
             lst.add(wrList);
         });
 
-        Utils utils = new Utils();
-
-        ArrayList<Wrapper> res = utils.mergeStreams(lst);
+        ArrayList<Wrapper> res = Utils.mergeStreams(lst);
         ArrayList<String> result = new ArrayList<>();
 
         for(Wrapper w : res){
@@ -146,9 +139,7 @@ public class XStructure {
         lst.add(subLst1);
         lst.add(subLst2);
 
-        Utils utils = new Utils();
-
-        ArrayList<Wrapper> res = utils.mergeStreams(lst);
+        ArrayList<Wrapper> res = Utils.mergeStreams(lst);
         ArrayList<String> result = new ArrayList<>();
 
         for(Wrapper w : res){
@@ -161,8 +152,6 @@ public class XStructure {
 
     public Pair<XStructure, Boolean> addLine(String line){
 
-        Config config = new Config();
-
         Triplet<HashMap<Branch, Double>, Branch, Double> param = findRightBranch(line);
 
         Branch b = param.getValue1();
@@ -171,8 +160,9 @@ public class XStructure {
         _lines.add(line);
 
         HashMap<Branch, Double> _branches = param.getValue0();
-        _branches.put(b.learnString(line), _branches.get(b)+1.0);
+        double score = _branches.get(b) + 1.0;
         _branches.remove(b);
+        _branches.put(b.learnString(line), score);
 
         double _bthresh = branchingThreshold;
 
@@ -192,40 +182,47 @@ public class XStructure {
 
         double stdev = stats.getStandardDeviation();
 
-        Boolean bool = (history.size()+1)%config.inc != 0  && config.neededSampleSize(stdev) < history.size();
+        Boolean bool = (history.size()+1)%Config.inc > 0  && Config.neededSampleSize(stdev) < history.size();
 
         return Pair.with(xstruct.trim(), bool);
 
     }
 
     public XStructure addNewLines(ArrayList<String> lines){
-
-        Config config = new Config();
-
-        if(config.tts){
-
+        
+        if(Config.tts){
+            
             ArrayList<Pair<XStructure, Boolean>> scannedLines = new ArrayList<>();
-
+            
+            XStructure x = this;
+            
             for(String line : lines){
+                
                 if(line.length() != 0){
-                    scannedLines.add(this.addLine(line));
+                    
+                    Pair<XStructure, Boolean> pair = x.addLine(line);
+                    x = pair.getValue0();
+                    scannedLines.add(pair);
                 }
             }
-
-            for(Pair<XStructure, Boolean> p : scannedLines){
-                if(p.getValue1()) return p.getValue0();
+            
+            for(int i = scannedLines.size() - 1; i>=0; i--){
+                if(scannedLines.get(i).getValue1()) return scannedLines.get(i).getValue0();
             }
-
+            
             return scannedLines.get(scannedLines.size()-1).getValue0();
 
         }
 
         else{
-
-            Pair<XStructure, Boolean> added = Pair.with(this, false);
+            XStructure x = this;
+            Pair<XStructure, Boolean> added = Pair.with(x, false);
 
             for( String line : lines){
-                if(line.length()>0) added = this.addLine(line);
+                if(line.length()>0){
+                    added = x.addLine(line);
+                    x = added.getValue0();
+                }
             }
 
             return added.getValue0();
@@ -239,6 +236,7 @@ public class XStructure {
         Branch b = new Branch(str);
 
         HashMap<Branch, Double> res = new HashMap<>();
+        res.putAll(branches);
         res.put(b, (double) 0);
     
         return Pair.with(res, b);
@@ -248,7 +246,7 @@ public class XStructure {
     // Given a string, find which branch of the representation should learn it
     private Triplet<HashMap<Branch, Double>, Branch, Double> findRightBranch(String str){
 
-        if(branches.isEmpty()){
+        if(branches.size() == 0){
 
             Pair<HashMap<Branch, Double>, Branch> newBr = newBranch(str);
 
@@ -256,28 +254,35 @@ public class XStructure {
 
         }
 
-        HashMap<Double, Branch> scores = new HashMap<>();
-
-        ArrayList<Double> scoreLst = new ArrayList<>();
-
-        branches.forEach((key, val)->{
-            scores.put(key.scoreString(str), key);
-            scoreLst.add(key.scoreString(str));
-        });
-
-        Pair<Double, Branch> minPair = Pair.with(Collections.min(scoreLst), scores.get(Collections.min(scoreLst)));
-
-        if(minPair.getValue0()<branchingThreshold){
-
-            return Triplet.with(branches, minPair.getValue1(), minPair.getValue0());
-
-        }
-
         else{
 
-            Pair<HashMap<Branch, Double>, Branch> newBr = newBranch(str);
+            Map<Branch, Double> scores = new HashMap<>();
 
-            return Triplet.with(newBr.getValue0(), newBr.getValue1(), minPair.getValue0());
+            branches.forEach((key, val)->{
+                scores.put(key, key.scoreString(str));
+            });
+
+            Entry<Branch, Double> min = Collections.min(scores.entrySet(), new Comparator<Entry<Branch, Double>>() {
+                public int compare(Entry<Branch, Double> entry1, Entry<Branch, Double> entry2) {
+                    return entry1.getValue().compareTo(entry2.getValue());
+                }
+            });            
+
+            Pair<Double, Branch> minPair = Pair.with(min.getValue(), min.getKey());
+
+            if(minPair.getValue0()<branchingThreshold){
+
+                return Triplet.with(branches, minPair.getValue1(), minPair.getValue0());
+
+            }
+
+            else{
+
+                Pair<HashMap<Branch, Double>, Branch> newBr = newBranch(str);
+
+                return Triplet.with(newBr.getValue0(), newBr.getValue1(), minPair.getValue0());
+
+            }
 
         }
 
@@ -304,11 +309,9 @@ public class XStructure {
 
     private XStructure trim(int numTimes, HashMap<Pair<Branch,Branch>, Double> _dm){
 
-        Config config = new Config();
+        if(branches.size()<=Config.maxBranches){
 
-        if(branches.size()<=config.maxBranches){
-
-            return new XStructure();
+            return this;
 
         }
 
@@ -483,15 +486,13 @@ public class XStructure {
 
     public XStructure mergeWith(XStructure other){
 
-        Config config = new Config();
-
         HashMap<Branch, Double> _branches = new HashMap<>();
         _branches.putAll(branches);
         _branches.putAll(other.branches);
 
         XStructure x = new XStructure(new ArrayList<String>(), _branches, 0.0, new ArrayList<Double>());
 
-        return x.trim(this.branches.size()-config.maxBranches);
+        return x.trim(this.branches.size()-Config.maxBranches);
 
     }
 
@@ -512,5 +513,5 @@ public class XStructure {
         return merged;
 
     }
-    
+
 }

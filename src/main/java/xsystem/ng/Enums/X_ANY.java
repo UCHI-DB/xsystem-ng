@@ -12,8 +12,8 @@ public class X_ANY implements XClass {
     }
 
     public ArrayList<Character> domain(){
-        Config config = new Config();
-        String any = String.valueOf(config.upperCaseChar) + String.valueOf(config.lowerCaseChar) + String.valueOf(config.numbers);
+        String any = String.valueOf(Config.upperCaseChar) + String.valueOf(Config.lowerCaseChar)
+                + String.valueOf(Config.numbers);
         char[] anyType = any.toCharArray();
         ArrayList<Character> charlst = new ArrayList<Character>();
         for(char ch: anyType){

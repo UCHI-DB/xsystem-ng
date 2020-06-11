@@ -26,9 +26,7 @@ public class Branch {
 
 	public Branch(ArrayList<String> _l, ArrayList<String> _tknzs, ArrayList<Token> _tks){
 
-		Config config = new Config();
-
-		this.lines = ((config.tts) ? _l : new ArrayList<>());
+		this.lines = ((Config.tts) ? _l : new ArrayList<>());
 		this.tokenStructs = _tks;
 		this.tokenizers = _tknzs;
 		this.branchStringGenerator = branchStr(this.tokenStructs);
@@ -48,9 +46,7 @@ public class Branch {
 
 		ArrayList<Token> _tokenStructs = makeTokenStructs(str);
 
-		Config config = new Config();
-
-		this.lines = ((config.tts) ? _lines : new ArrayList<>());
+		this.lines = ((Config.tts) ? _lines : new ArrayList<>());
 		this.tokenStructs = _tokenStructs;
 		this.tokenizers = _tokenizers;
 		this.branchStringGenerator = branchStr(_tokenStructs);
@@ -82,9 +78,7 @@ public class Branch {
 
 		}
 
-		Utils utils = new Utils();
-
-		ArrayList<Wrapper> res = utils.mergeStreams(lst);
+		ArrayList<Wrapper> res = Utils.mergeStreams(lst);
 		ArrayList<String> result = new ArrayList<>();
 	
 		for(Wrapper w : res){
@@ -120,11 +114,10 @@ public class Branch {
 	public ArrayList<String> findTokenizers (String str){
 
 		ArrayList<String> result = new ArrayList<>();
-
-		Config config = new Config();
+		new Config();
 
 		for(char c : str.toCharArray()){
-			if(new String(config.splChars).contains(String.valueOf(c))) result.add(String.valueOf(c));
+			if(new String(Config.splChars).contains(String.valueOf(c))) result.add(String.valueOf(c));
 		}
 
 		result.add("$");
@@ -135,11 +128,11 @@ public class Branch {
 	// Makes a set of initialized token structures (called once)
 	public ArrayList<Token> makeTokenStructs (String str){
 
-		Config config = new Config();
-
 		ArrayList<Token> result = new ArrayList<>();
 
-		for(String subStr : str.split("[" + Pattern.quote ( new String(config.splChars) ) + "]", -1)){
+		String[] subStrs = str.split("[" + Pattern.quote ( new String(Config.splChars) ) + "]", -1);
+
+		for(int i = 0 ; i<subStrs.length; i++){
 			result.add(new Token());
 		}
 
@@ -248,11 +241,9 @@ public class Branch {
 	
 		DescriptiveStatistics allScores = new DescriptiveStatistics();
 	
-		Config config = new Config();
+		while(allScores.getN()<Config.neededSampleSize(stddev)){
 	
-		while(allScores.getN()<config.neededSampleSize(stddev)){
-	
-			ArrayList<String> str = other.generateRandomStrings(config.inc);
+			ArrayList<String> str = other.generateRandomStrings(Config.inc);
 		
 			for(String s : str) allScores.addValue(scoreString(s));
 		

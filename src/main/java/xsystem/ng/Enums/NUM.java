@@ -16,7 +16,7 @@ public class NUM implements CharClass {
     }
 
     public ArrayList<Character> domain(){
-        char[] numerics = new Config().numbers;
+        char[] numerics = Config.numbers;
         ArrayList<Character> charlst = new ArrayList<Character>();
         for(char ch: numerics){
             charlst.add(ch);
