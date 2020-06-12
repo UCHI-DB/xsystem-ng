@@ -2,12 +2,19 @@ package xsystem.ng.Learning;
 
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import com.opencsv.CSVParser;
+import com.opencsv.CSVParserBuilder;
 import com.opencsv.CSVReader;
+import com.opencsv.CSVReaderBuilder;
+import com.opencsv.CSVWriter;
+import com.opencsv.enums.CSVReaderNullFieldIndicator;
 
+import org.apache.log4j.BasicConfigurator;
 import org.javatuples.Pair;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,33 +31,52 @@ public class ParseCSV {
 
     public ParseCSV(){
 
-        HashMap<String, ArrayList<Pair<String, XStructure>>> _logs = learnStructs();
+    HashMap<String, ArrayList<Pair<String, XStructure>>> _logs = learnStructs();
 
-        ParseCSV.logs = _logs;
-        
-        ParseCSV.learned = learned(_logs);
+    ParseCSV.logs = _logs;
+
+    ParseCSV.learned = learned(_logs);
     }
 
     private HashMap<String, ArrayList<Pair<String, XStructure>>> learnStructs() {
 
         if(logs != null)
-            return logs;
+        return logs;
+
+        BasicConfigurator.configure();
 
         String path = "src/main/resources/LearningData";
 
+        String outputFile = "src/main/resources/Learned/LearnedXStructs.csv";
+
         final File folder = new File(path);
+
+        final File outFile = new File(outputFile);
 
         HashMap<String, ArrayList<Pair<String, XStructure>>> logs = new HashMap<>();
 
-        for(File file : folder.listFiles()){
+        try {
 
-            LOG.info("Started Learning From File " + file.getName());
+            FileWriter outputfile = new FileWriter(outFile);
 
-            ArrayList<Pair<String, XStructure>> colXstruct = new ArrayList<>();
+            CSVWriter writer = new CSVWriter(outputfile);
 
-            try {
+            for (File file : folder.listFiles()) {
 
-                CSVReader reader = new CSVReader(new FileReader(file.getPath()));
+                LOG.info("Started Learning From File " + file.getName());
+
+                String[] header = { file.getName() };
+                writer.writeNext(header);
+
+                ArrayList<Pair<String, XStructure>> colXstruct = new ArrayList<>();
+
+                CSVParser parser = new CSVParserBuilder()
+                .withFieldAsNull(CSVReaderNullFieldIndicator.EMPTY_SEPARATORS)
+                .build();
+
+                CSVReader reader = new CSVReaderBuilder(new FileReader(file.getPath()))
+                .withCSVParser(parser)
+                .build();
 
                 List<String[]> myEntries = reader.readAll();
                 
@@ -66,16 +92,21 @@ public class ParseCSV {
 
                 }
 
-                for(int i=1; i<myEntries.size(); i++){
+                for(int i=0; i<myEntries.size(); i++){
+                    
+                    if(i==0);
 
-                    String[] row = myEntries.get(i);
+                    else{
+                        String[] row = myEntries.get(i);
 
-                    if(row.length != columns.size()) LOG.info("Error in CSV file");
+                        if(row.length != columns.size()) LOG.info("Error in CSV file");
 
-                    for(int j=0; j<row.length ; j++){
-
-                        columns.get(j).add(row[j]);
-
+                        for(int j=0; j<row.length ; j++){
+                            if(row[j] == null)
+                                columns.get(j).add("");
+                            else
+                                columns.get(j).add(row[j]);
+                        }
                     }
 
                 }
@@ -95,19 +126,25 @@ public class ParseCSV {
                     colXstruct.add(pair);
 
                     LOG.info(colName + " has XStruct " + learned);
+
+                    String[] entry = {colName, learned.toString()};
+                    writer.writeNext(entry);
                 }
 
                 logs.put(file.getName(), colXstruct);
 
-            } 
-
-            catch (Exception e) {
-                //TODO: handle exception
-                LOG.info("[Error] " + e);
             }
+
+            writer.close();
+        }
+
+        catch (Exception e) {
+            //TODO: handle exception
+            LOG.info("[Error] " + e);
         }
 
         return logs;
+
     }
 
     private ArrayList<XStructure> learned(HashMap<String, ArrayList<Pair<String, XStructure>>> logs){

@@ -492,7 +492,7 @@ public class XStructure {
 
         XStructure x = new XStructure(new ArrayList<String>(), _branches, 0.0, new ArrayList<Double>());
 
-        return x.trim(this.branches.size()-Config.maxBranches);
+        return x.trim(_branches.size()-Config.maxBranches);
 
     }
 
