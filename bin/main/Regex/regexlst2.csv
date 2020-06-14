@@ -29,64 +29,64 @@
 33,email,"^([\w\-\.]+)@((\[([0-9]{1,3}\.){3}[0-9]{1,3}\])|(([\w\-]+\.)+)([a-zA-Z]{2,4}))$",2RJ9H0bmV@[2.6.46.352]
 34,email,"^[\w-]+(\.[\w-]+)*@([a-z0-9-]+(\.[a-z0-9-]+)*?\.[a-z]{2,6}|(\d{1,3}\.){3}\d{1,3})(:\d{4})?$",iCXUEElxu.WXxeS_US.lt3YcmOq@7d20t0.qepzx6.vik92n9.iz6mbxhe.0psj56algx.-2b4.zfd3daa.0-pvn1-l.2.53ic7.4rp0pog.nbhpn:5262
 35,email,"^((([a-zA-Z\'\.\-]+)?)((,\s*([a-zA-Z]+))?)|([A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})))(;{1}(((([a-zA-Z\'\.\-]+){1})((,\s*([a-zA-Z]+))?))|([A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})){1}))*$","Tl,		 	 	jJVBnovI;6_gUoue.HWTuAV8gzS@OUbL5.u9LT-JnNvcy05AWeHYLzU6pW2A-HJof-Z23t.CJYvW6vZhV.QOZzWSN;jKD'A;dtDLeO, oVj;w.AO1njxQ7.Zp-9HqiTTJWO8i_sswb8s_LC_BRnh58gMG_eLujrX@7J-1ONcmKDq-NLW-rNEMkyQ.PNGrSCi;VtKIfcUrl;sVBX0t7EIJXcBi.8QzhmyEvdw0GETE4wk7IGOEsARI2fkgIR.9qictt7@QL3OkrL-JEwBM6H7TcTDobkn-GY9kB4h.768-DCdD1k3pZE.GGxAvhXEQO;hbVVmA'Es;Z.EhxFI0Wb9d.D@xcdSBS0YPPW-pqe8ZmsNmUlQa3.gBhD9rykJNb5q55qMu3Jt-AvELybH9pIBrL-ZFlWYnPXl.IRTxtGQDfX;i.wTi,		  JVZHIAz"
-37,uri,"((http\://|https\://|ftp\://)|(www.))+(([a-zA-Z0-9\.-]+\.[a-zA-Z]{2,4})|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(/[a-zA-Z0-9%:/-_\?\.'~]*)?",http://https://http://wwwOhttps://93.0.093.3
-38,uri,"^((?:2[0-5]{2}|1\d{2}|[1-9]\d|[1-9])\.(?:(?:2[0-5]{2}|1\d{2}|[1-9]\d|\d)\.){2}(?:2[0-5]{2}|1\d{2}|[1-9]\d|\d)):(\d|[1-9]\d|[1-9]\d{2,3}|[1-5]\d{4}|6[0-4]\d{3}|654\d{2}|655[0-2]\d|6553[0-5])$",117.243.9.5:4162
-39,uri,"^((([0-9A-Fa-f]{1,4}:){7}[0-9A-Fa-f]{1,4})|(([0-9A-Fa-f]{1,4}:){6}:[0-9A-Fa-f]{1,4})|(([0-9A-Fa-f]{1,4}:){5}:([0-9A-Fa-f]{1,4}:)?[0-9A-Fa-f]{1,4})|(([0-9A-Fa-f]{1,4}:){4}:([0-9A-Fa-f]{1,4}:){0,2}[0-9A-Fa-f]{1,4})|(([0-9A-Fa-f]{1,4}:){3}:([0-9A-Fa-f]{1,4}:){0,3}[0-9A-Fa-f]{1,4})|(([0-9A-Fa-f]{1,4}:){2}:([0-9A-Fa-f]{1,4}:){0,4}[0-9A-Fa-f]{1,4})|(([0-9A-Fa-f]{1,4}:){6}((\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b)\.){3}(\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b))|(([0-9A-Fa-f]{1,4}:){0,5}:((\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b)\.){3}(\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b))|(::([0-9A-Fa-f]{1,4}:){0,5}((\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b)\.){3}(\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b))|([0-9A-Fa-f]{1,4}::([0-9A-Fa-f]{1,4}:){0,5}[0-9A-Fa-f]{1,4})|(::([0-9A-Fa-f]{1,4}:){0,6}[0-9A-Fa-f]{1,4})|(([0-9A-Fa-f]{1,4}:){1,7}:))$",::Bd:B4
-48,uri,(^\d{3}\x2E\d{3}\x2E\d{3}\x2D\d{2}$),310.618.481-17
-49,uri,"^(((ht|f)tp(s?))\://)?(www.|[a-zA-Z].)[a-zA-Z0-9\-\.]+\.(com|edu|gov|mil|net|org|biz|info|name|museum|us|ca|uk)(\:[0-9]+)*(/($|[a-zA-Z0-9\.\,\;\?\'\\\+&amp;%\$#\=~_\-]+))*$","L%S.info:808706:4594:395990297:103:27810731:94371126:778:90005441:4:8897854185/MPtl/Jv33//UOC5vr,//pvK#d//vY/c~t92E/"
-50,uri,^[^\\\/\?\*\&quot;\'\&gt;\&lt;\:\|]*$,s8wJn
-51,uri,^(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9])\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[0-9])$,255.156.0.98
-53,uri,"^(ht|f)tp(s?)\:\/\/[a-zA-Z0-9\-\._]+(\.[a-zA-Z0-9\-\._]+){2,}(\/?)([a-zA-Z0-9\-\.\?\,\'\/\\\+&amp;%\$#_]*)?$",http://yg.bZZC_SewP.EDy_Hqicy.4jr20jWQV.6RL_.e5jZN.rf3Doo5N.hcNO.6xTg6nn/
-54,uri,"^([a-zA-Z0-9]([a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,6}$",hvAE7y8xit.q.8.qcalxg4.c.p.x.wvFL
-59,uri,^(([a-zA-Z]:)|(\\{2}\w+)\$?)(\\(\w[\w ]*.*))+\.(jpg|JPG)$,"t:\jWOHAcBfOz%yh\GPBs3EJ&aSj'\U5c5inj\ACnS4dIla""5{nNV.JPG"
-61,uri,"(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?",ftp://6.gxAAr.xDVEwcbxI.y0uhS7jZR0.uJglAo2d_.tsK0-D6.RZA0fr2mfq.GEW6T
-62,uri,^(([a-zA-Z]:)|(\\{2}\w+)\$?)(\\(\w[\w ]*.*))+\.(txt|TXT)$,"C:\B4q+Jv?k_piW\nv4fsYM8hk\BgraZhs1h@Kc0,UvY\sjL0AE_fFH=:.TXT"
-63,uri,"(?!\.)[a-z]{1,4}$",v
-64,uri,(a(?:[cdefgilmnoqrstuwxz]|ero|(?:rp|si)a)|b(?:[abdefghijmnorstvwyz]iz)|c(?:[acdfghiklmnoruvxyz]|at|o(?:m|op))|d[ejkmoz]|e(?:[ceghrstu]|du)|f[ijkmor]|g(?:[abdefghilmnpqrstuwy]|ov)|h[kmnrtu]|i(?:[delmnoqrst]|n(?:fo|t))|j(?:[emop]|obs)|k[eghimnprwyz]|l[abcikrstuvy]|m(?:[acdeghklmnopqrstuvwxyz]|il|obi|useum)|n(?:[acefgilopruz]|ame|et)|o(?:m|rg)|p(?:[aefghklmnrstwy]|ro)|qa|r[eosuw]|s[abcdeghijklmnortuvyz]|t(?:[cdfghjklmnoprtvwz]|(?:rav)?el)|u[agkmsyz]|v[aceginu]|w[fs]|y[etu]|z[amw]),qa
-65,uri,"^(\$)?(([1-9]\d{0,2}(\,\d{3})*)|([1-9]\d*)|(0))(\.\d{2})?$",552664475.52
-66,uri,^[a-zA-Z0-9]+([a-zA-Z0-9\-\.]+)?\.(com|org|net|mil|edu|COM|ORG|NET|MIL|EDU)$,1WLfJ3kwd96ILjE1.com
-67,uri,^(([0-2]*[0-9]+[0-9]+)\.([0-2]*[0-9]+[0-9]+)\.([0-2]*[0-9]+[0-9]+)\.([0-2]*[0-9]+[0-9]+))$,212111109413259847417.00121014590917.11089205098936610.18848564
-69,uri,"[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}",846.154.7.30
-70,uri,"^(http|https|ftp)\://([a-zA-Z0-9\.\-]+(\:[a-zA-Z0-9\.&amp;%\$\-]+)*@)*((25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9])\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[0-9])|localhost|([a-zA-Z0-9\-]+\.)*[a-zA-Z0-9\-]+\.(com|edu|gov|int|mil|net|org|biz|arpa|info|name|pro|aero|coop|museum|[a-zA-Z]{2}))(\:[0-9]+)*(/($|[a-zA-Z0-9\.\,\?\'\\\+&amp;%\$#\=~_\-]+))*$","ftp://WuEiU4:wy8cqmawH:Zm:h:Xiw:T:Su9VJcj@ITDbq:5Tp:ZzKY:Tq8:H.O;a%L-UD:%BpJCnsJ:h%4a0r:QueAyl@localhost//;Bey,BhpSa//vOwqDT//"
-72,uri,"(((file|gopher|news|nntp|telnet|http|ftp|https|ftps|sftp)://)|(www\.))+(([a-zA-Z0-9\._-]+\.[a-zA-Z]{2,6})|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(/[a-zA-Z0-9\&amp;%_\./-~-]*)?",www.www.www.sftp://news://ftp://www.www.http://ajsMU.rJfLez/|1dmEW
-73,uri,"^(\$|)([1-9]+\d{0,2}(\,\d{3})*|([1-9]+\d*))(\.\d{2})?$","$3138,936,677,790,208,124,633,728,898,141"
-75,uri,"([A-Z]:\\[^/:\*\?<>\|]+\.\w{2,6})|(\\{2}[^/:\*\?<>\|]+\.\w{2,6})",\\=ysNi)UYF.S86
-77,uri,"^(http|https|ftp)\://([a-zA-Z0-9\.\-]+(\:[a-zA-Z0-9\.&amp;%\$\-]+)*@)?((25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9])\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[0-9])|([a-zA-Z0-9\-]+\.)*[a-zA-Z0-9\-]+\.[a-zA-Z]{2,4})(\:[0-9]+)?(/[^/][a-zA-Z0-9\.\,\?\'\\/\+&amp;%\$#\=~_\-@]*)*$","ftp://g-9cEVrK9:o6VmzDxp3;:c3XAUtBlY:dNnpz:eGmsn0B$:G$VIczJp:.OmEWAoi:Y0m@gIkd.hdUW/nQLhumAKrr/r~Y3a25n/1PXAoRUU?/a/~_wc3aA/icvwX-d,AMS/J43KBqht\/}o/}g?Sj/$0OeSv"
-78,uri,^DOMAIN\\\w+$,DOMAIN\Bk565XGoY
-80,uri,"^http\://[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(/\S*)?$",http://J.FlB/FwlD
-81,uri,((mailto\:|(news|(ht|f)tp(s?))\://){1}\S+),mailto:A^
-82,uri,"^(http|https|ftp)\://[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(:[a-zA-Z0-9]*)?/?([a-zA-Z0-9\-\._\?\,\'/\\\+&amp;%\$#\=~])*$",ftp://9V5O.Sw:U/pM_0
-84,uri,"\b([\d\w\.\/\+\-\?\:]*)((ht|f)tp(s|)\:\/\/|[\d\d\d|\d\d]\.[\d\d\d|\d\d]\.|www\.|\.tv|\.ac|\.com|\.edu|\.gov|\.int|\.mil|\.net|\.org|\.biz|\.info|\.name|\.pro|\.museum|\.co)([\d\w\.\/\%\+\-\=\&amp;\?\:\\\&quot;\'\,\|\~\;]*)\b",OQAws9.acZ32xfmrLja
-85,uri,(\s|\n|^)(\w+://[^\s\n]+),g://zfN:JSd\ys
-87,uri,([^\=&]+)(?<!param1|param2|param3)\=([^\=&]+)(&)?,~4PJiib=00] dU@/*&
-88,uri,9[0-9],93
-89,uri,"[a-zA-Z]{3,}://[a-zA-Z0-9\.]+/*[a-zA-Z0-9/\\%_.]*\?*[a-zA-Z0-9/\\%_.=&amp;]*",CTmNCya://lDb8/////////g0jYyD%N????????ajkJxgwz
-90,uri,^((\d|\d\d|[0-1]\d\d|2[0-4]\d|25[0-5])\.(\d|\d\d|[0-1]\d\d|2[0-4]\d|25[0-5])\.(\d|\d\d|[0-1]\d\d|2[0-4]\d|25[0-5])\.(\d|\d\d|[0-1]\d\d|2[0-4]\d|25[0-5]))$,080.230.254.253
-91,uri,^([a-zA-Z].*|[1-9].*)\.(((j|J)(p|P)(g|G))|((g|G)(i|I)(f|F)))$,jm.GiF
-92,uri,"^[^\\\./:\*\?\""<>\|]{1}[^\\/:\*\?\""<>\|]{0,254}$",]@8
-94,uri,"(((ht|f)tp(s?):\/\/)|(www\.[^ \[\]\(\)\n\r\t]+)|(([012]?[0-9]{1,2}\.){3}[012]?[0-9]{1,2})\/)([^ \[\]\(\),;&quot;'&lt;&gt;\n\r\t]+)([^\. \[\]\(\),;&quot;'&lt;&gt;\n\r\t])|(([012]?[0-9]{1,2}\.){3}[012]?[0-9]{1,2})",07.14.4.235
-95,uri,^\\([^\\]+\\)*[^\/:*?&quot;&lt;&gt;|]?$,"\a/(\6U:\0Uq6HZ\	CI,.\"
-96,uri,"^(([a-zA-Z0-9]([a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,6}/(DC=['\w\d\s\-\&amp;]+[,]*){2,})|((\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])/(DC=['\w\d\s\-\&amp;]+[,]*){2,})|((DC=['\w\d\s\-\&amp;]+[,]*){2,})$","x.OOiX5G.r.HGML3a8SO3in.LzU2fIyk.LV2ZYgLQWuy.j6EqBhwViws.hnRVcZbPl.zY6nW.J.ppKLd/DC=9uMWXmN,DC=K_86fyDC=	j3e21Dd,,,,,,DC=DBT17m5S74,,,,,,,,,DC=MU9 M8S2;e,,,,"
-97,uri,"^(ht|f)tp((?<=http)s)?://((?<=http://)www|(?<=https://)www|(?<=ftp://)ftp)\.(([a-z][0-9])|([0-9][a-z])|([a-z0-9][a-z0-9\-]{1,2}[a-z0-9])|([a-z0-9][a-z0-9\-](([a-z0-9\-][a-z0-9])|([a-z0-9][a-z0-9\-]))[a-z0-9\-]*[a-z0-9]))\.(co|me|org|ltd|plc|net|sch|ac|mod|nhs|police|gov)\.uk(:\d+)?\/?$",httphttps://ftp://ftp.p5.ac.uk/
-98,uri,^[a-z]+([a-z0-9-]*[a-z0-9]+)?(\.([a-z]+([a-z0-9-]*[a-z0-9]+)?)+)*$,iujyvcujcotfvthlj4aonbwb.ryqeqlwi7pphkbc4avpptfduljmwwgcmrjxnhyi6m8bztfspxnqnwhcgnqcwh-lcckz6flzohd3ggvryvvlyaw-hor5iftsjxzjymjzwfgcualf578ql.mxm269xcqpcwlfaewxa0l3yrsy-eoeyfeyanxxsfjwezs.sxphzg8krndh1mozlfxq71q6x3xmdcgajkfgftopwveksngikdy7o1pqaiyt2e4croyepnt.nwnnopnqsdzj2j0dq5wrpqaaucmqiglme.pstgiycbnzhbgvdv6ia77allojehmcimymndy30xricwozri.zhbqcpldjioztfwi8yqazdxptsx45qb7ztivg2jfthqhlwkgb1okk-kylyep0tnqvpip9-oogm1wwgk02xbkr.htinrnwa9dzssr84hacjtaibtyunbmqaqgne2y26fi8qqcbvo5rmwstddoojc.smczooaszrwyawkuenms7p39izdevnumwoheqlxhwdnmricefqbbwwinbmja5amiwvxbqsoyz0dmcqitcejih27fhvzxgtd8x.zcjaxejyhylx1hacjrzzyludnzmnoaamjixbrxg2ps191.aoky2y8luthde
-99,uri,&lt;a\s*.*?href\s*=\s*['&quot;](?!http:\/\/).*?&gt;(.*?)&lt;\/a&gt;,&lt;a  ihref   	 =			    &Y{&gt;G&lt;/a&gt;
-100,uri,"^(ht|f)tp((?<=http)s)?://((?<=http://)www|(?<=https://)www|(?<=ftp://)ftp)\.(([a-z][0-9])|([0-9][a-z])|([a-z0-9][a-z0-9\-]{1,2}[a-z0-9])|([a-z0-9][a-z0-9\-](([a-z0-9\-][a-z0-9])|([a-z0-9][a-z0-9\-]))[a-z0-9\-]*[a-z0-9]))\.(co|me|org|ltd|plc|net|sch|ac|mod|nhs|police|gov)\.uk$",ftp://http://www.92trq9h4.net.uk
-101,uri,"^([a-zA-Z]\:|\\)\\([^\\]+\\)*[^\/:*?""<>|]+\.htm(l)?$",\\oU*v?]+GA\W\~E.@VhyV9T.htm
-102,uri,"^((https?|ftp)\://((\[?(\d{1,3}\.){3}\d{1,3}\]?)|(([-a-zA-Z0-9]+\.)+[a-zA-Z]{2,4}))(\:\d+)?(/[-a-zA-Z0-9._?,'+&amp;%$#=~\\]+)*/?)$",ftp://[79.835.8.723]:5140/mC/0G89x-S/N44Q%ow/8hF/
-103,uri,"^(http|https|ftp)\://[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(:[a-zA-Z0-9]*)?/?([a-zA-Z0-9\-\._\?\,\'/\\\+&amp;%\$#\=~])*[^\.\,\)\(\s]$",http://2XE.GN/yn_T
-105,uri,"^([a-zA-Z]\:)(\\[^\\/:*?<>""|]*(?<![ ]))*(\.[a-zA-Z]{2,6})$","d:\.evsAE0b\I~(n(dJ\s\XV)CMyX@f\JFO,g\LsHg_C~2,\,LoI!)J5sU\@;e.DNUcn"
-106,uri,\b(((\S+)?)(@|mailto\:|(news|(ht|f)tp(s?))\://)\S+)\b,mailto:^yF
-107,uri,"^(http|https|ftp)\://(((25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\.){3}(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])|([a-zA-Z0-9_\-\.])+\.(com|net|org|edu|int|mil|gov|arpa|biz|aero|name|coop|info|pro|museum|uk|me))((:[a-zA-Z0-9]*)?/?([a-zA-Z0-9\-\._\?\,\'/\\\+&amp;%\$#\=~])*)$",http://151.211.250.202/Cs
-108,uri,([a-zA-Z]:(\\w+)*\\[a-zA-Z0_9]+)?.xls,i:\gvSAzi?xls
-109,uri,^[a-zA-Z0-9\-\.]+\.(com|org|net|mil|edu|COM|ORG|NET|MIL|EDU)$,v9Si.org
-110,uri,(mailto\:|(news|(ht|f)tp(s?))\://)(([^[:space:]]+)|([^[:space:]]+)( #([^#]+)#)?),news://]]]]]
-111,uri,[0-9A-Fa-f]{2}(\.?)[0-9A-Fa-f]{2}(\.?)[0-9A-Fa-f]{2}(\.?)[0-9A-Fa-f]{2},9e2cf1d4
-113,uri,\.com/(\d+)$,.com/0143550264
-114,uri,.*?$(?<!\.aspx),/(S|-w	v>
-115,uri,(^[a-zA-Z0-9]+://),OxtEYCf0WD://
-116,uri,"^(([a-z][0-9])|([0-9][a-z])|([a-z0-9][a-z0-9\-]{1,2}[a-z0-9])|([a-z0-9][a-z0-9\-](([a-z0-9\-][a-z0-9])|([a-z0-9][a-z0-9\-]))[a-z0-9\-]*[a-z0-9]))\.(co|me|org|ltd|plc|net|sch|ac|mod|nhs|police|gov)\.uk$",6f.nhs.uk
-117,uri,^http://([a-zA-Z0-9_\-]+)([\.][a-zA-Z0-9_\-]+)+([/][a-zA-Z0-9\~\(\)_\-]*)+([\.][a-zA-Z0-9\(\)_\-]+)*$,http://rD.rMZu7f.Noc6.C5A.H19bcoN1.4gqGsO/Sh/Rwb5U)Q0Ac/-33Pp7ew/.6QZj.J(.p5RVJwSV9X.30X.ZGmwJ10hW.FwmjXVloc.5e.ecktIV9U.p
-119,uri,^\[assembly: AssemblyVersion\(\&quot;([0-9]+)\.([0-9]+)\.([0-9]+)\.([0-9]+),[assembly: AssemblyVersion(&quot;9884321267.96842857.2211.03
+37,url,"((http\://|https\://|ftp\://)|(www.))+(([a-zA-Z0-9\.-]+\.[a-zA-Z]{2,4})|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(/[a-zA-Z0-9%:/-_\?\.'~]*)?",http://https://http://wwwOhttps://93.0.093.3
+38,url,"^((?:2[0-5]{2}|1\d{2}|[1-9]\d|[1-9])\.(?:(?:2[0-5]{2}|1\d{2}|[1-9]\d|\d)\.){2}(?:2[0-5]{2}|1\d{2}|[1-9]\d|\d)):(\d|[1-9]\d|[1-9]\d{2,3}|[1-5]\d{4}|6[0-4]\d{3}|654\d{2}|655[0-2]\d|6553[0-5])$",117.243.9.5:4162
+39,url,"^((([0-9A-Fa-f]{1,4}:){7}[0-9A-Fa-f]{1,4})|(([0-9A-Fa-f]{1,4}:){6}:[0-9A-Fa-f]{1,4})|(([0-9A-Fa-f]{1,4}:){5}:([0-9A-Fa-f]{1,4}:)?[0-9A-Fa-f]{1,4})|(([0-9A-Fa-f]{1,4}:){4}:([0-9A-Fa-f]{1,4}:){0,2}[0-9A-Fa-f]{1,4})|(([0-9A-Fa-f]{1,4}:){3}:([0-9A-Fa-f]{1,4}:){0,3}[0-9A-Fa-f]{1,4})|(([0-9A-Fa-f]{1,4}:){2}:([0-9A-Fa-f]{1,4}:){0,4}[0-9A-Fa-f]{1,4})|(([0-9A-Fa-f]{1,4}:){6}((\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b)\.){3}(\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b))|(([0-9A-Fa-f]{1,4}:){0,5}:((\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b)\.){3}(\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b))|(::([0-9A-Fa-f]{1,4}:){0,5}((\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b)\.){3}(\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b))|([0-9A-Fa-f]{1,4}::([0-9A-Fa-f]{1,4}:){0,5}[0-9A-Fa-f]{1,4})|(::([0-9A-Fa-f]{1,4}:){0,6}[0-9A-Fa-f]{1,4})|(([0-9A-Fa-f]{1,4}:){1,7}:))$",::Bd:B4
+48,url,(^\d{3}\x2E\d{3}\x2E\d{3}\x2D\d{2}$),310.618.481-17
+49,url,"^(((ht|f)tp(s?))\://)?(www.|[a-zA-Z].)[a-zA-Z0-9\-\.]+\.(com|edu|gov|mil|net|org|biz|info|name|museum|us|ca|uk)(\:[0-9]+)*(/($|[a-zA-Z0-9\.\,\;\?\'\\\+&amp;%\$#\=~_\-]+))*$","L%S.info:808706:4594:395990297:103:27810731:94371126:778:90005441:4:8897854185/MPtl/Jv33//UOC5vr,//pvK#d//vY/c~t92E/"
+50,url,^[^\\\/\?\*\&quot;\'\&gt;\&lt;\:\|]*$,s8wJn
+51,url,^(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9])\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[0-9])$,255.156.0.98
+53,url,"^(ht|f)tp(s?)\:\/\/[a-zA-Z0-9\-\._]+(\.[a-zA-Z0-9\-\._]+){2,}(\/?)([a-zA-Z0-9\-\.\?\,\'\/\\\+&amp;%\$#_]*)?$",http://yg.bZZC_SewP.EDy_Hqicy.4jr20jWQV.6RL_.e5jZN.rf3Doo5N.hcNO.6xTg6nn/
+54,url,"^([a-zA-Z0-9]([a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,6}$",hvAE7y8xit.q.8.qcalxg4.c.p.x.wvFL
+59,url,^(([a-zA-Z]:)|(\\{2}\w+)\$?)(\\(\w[\w ]*.*))+\.(jpg|JPG)$,"t:\jWOHAcBfOz%yh\GPBs3EJ&aSj'\U5c5inj\ACnS4dIla""5{nNV.JPG"
+61,url,"(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?",ftp://6.gxAAr.xDVEwcbxI.y0uhS7jZR0.uJglAo2d_.tsK0-D6.RZA0fr2mfq.GEW6T
+62,url,^(([a-zA-Z]:)|(\\{2}\w+)\$?)(\\(\w[\w ]*.*))+\.(txt|TXT)$,"C:\B4q+Jv?k_piW\nv4fsYM8hk\BgraZhs1h@Kc0,UvY\sjL0AE_fFH=:.TXT"
+63,url,"(?!\.)[a-z]{1,4}$",v
+64,url,(a(?:[cdefgilmnoqrstuwxz]|ero|(?:rp|si)a)|b(?:[abdefghijmnorstvwyz]iz)|c(?:[acdfghiklmnoruvxyz]|at|o(?:m|op))|d[ejkmoz]|e(?:[ceghrstu]|du)|f[ijkmor]|g(?:[abdefghilmnpqrstuwy]|ov)|h[kmnrtu]|i(?:[delmnoqrst]|n(?:fo|t))|j(?:[emop]|obs)|k[eghimnprwyz]|l[abcikrstuvy]|m(?:[acdeghklmnopqrstuvwxyz]|il|obi|useum)|n(?:[acefgilopruz]|ame|et)|o(?:m|rg)|p(?:[aefghklmnrstwy]|ro)|qa|r[eosuw]|s[abcdeghijklmnortuvyz]|t(?:[cdfghjklmnoprtvwz]|(?:rav)?el)|u[agkmsyz]|v[aceginu]|w[fs]|y[etu]|z[amw]),qa
+65,url,"^(\$)?(([1-9]\d{0,2}(\,\d{3})*)|([1-9]\d*)|(0))(\.\d{2})?$",552664475.52
+66,url,^[a-zA-Z0-9]+([a-zA-Z0-9\-\.]+)?\.(com|org|net|mil|edu|COM|ORG|NET|MIL|EDU)$,1WLfJ3kwd96ILjE1.com
+67,url,^(([0-2]*[0-9]+[0-9]+)\.([0-2]*[0-9]+[0-9]+)\.([0-2]*[0-9]+[0-9]+)\.([0-2]*[0-9]+[0-9]+))$,212111109413259847417.00121014590917.11089205098936610.18848564
+69,url,"[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}",846.154.7.30
+70,url,"^(http|https|ftp)\://([a-zA-Z0-9\.\-]+(\:[a-zA-Z0-9\.&amp;%\$\-]+)*@)*((25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9])\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[0-9])|localhost|([a-zA-Z0-9\-]+\.)*[a-zA-Z0-9\-]+\.(com|edu|gov|int|mil|net|org|biz|arpa|info|name|pro|aero|coop|museum|[a-zA-Z]{2}))(\:[0-9]+)*(/($|[a-zA-Z0-9\.\,\?\'\\\+&amp;%\$#\=~_\-]+))*$","ftp://WuEiU4:wy8cqmawH:Zm:h:Xiw:T:Su9VJcj@ITDbq:5Tp:ZzKY:Tq8:H.O;a%L-UD:%BpJCnsJ:h%4a0r:QueAyl@localhost//;Bey,BhpSa//vOwqDT//"
+72,url,"(((file|gopher|news|nntp|telnet|http|ftp|https|ftps|sftp)://)|(www\.))+(([a-zA-Z0-9\._-]+\.[a-zA-Z]{2,6})|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(/[a-zA-Z0-9\&amp;%_\./-~-]*)?",www.www.www.sftp://news://ftp://www.www.http://ajsMU.rJfLez/|1dmEW
+73,url,"^(\$|)([1-9]+\d{0,2}(\,\d{3})*|([1-9]+\d*))(\.\d{2})?$","$3138,936,677,790,208,124,633,728,898,141"
+75,url,"([A-Z]:\\[^/:\*\?<>\|]+\.\w{2,6})|(\\{2}[^/:\*\?<>\|]+\.\w{2,6})",\\=ysNi)UYF.S86
+77,url,"^(http|https|ftp)\://([a-zA-Z0-9\.\-]+(\:[a-zA-Z0-9\.&amp;%\$\-]+)*@)?((25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9])\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[0-9])|([a-zA-Z0-9\-]+\.)*[a-zA-Z0-9\-]+\.[a-zA-Z]{2,4})(\:[0-9]+)?(/[^/][a-zA-Z0-9\.\,\?\'\\/\+&amp;%\$#\=~_\-@]*)*$","ftp://g-9cEVrK9:o6VmzDxp3;:c3XAUtBlY:dNnpz:eGmsn0B$:G$VIczJp:.OmEWAoi:Y0m@gIkd.hdUW/nQLhumAKrr/r~Y3a25n/1PXAoRUU?/a/~_wc3aA/icvwX-d,AMS/J43KBqht\/}o/}g?Sj/$0OeSv"
+78,url,^DOMAIN\\\w+$,DOMAIN\Bk565XGoY
+80,url,"^http\://[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(/\S*)?$",http://J.FlB/FwlD
+81,url,((mailto\:|(news|(ht|f)tp(s?))\://){1}\S+),mailto:A^
+82,url,"^(http|https|ftp)\://[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(:[a-zA-Z0-9]*)?/?([a-zA-Z0-9\-\._\?\,\'/\\\+&amp;%\$#\=~])*$",ftp://9V5O.Sw:U/pM_0
+84,url,"\b([\d\w\.\/\+\-\?\:]*)((ht|f)tp(s|)\:\/\/|[\d\d\d|\d\d]\.[\d\d\d|\d\d]\.|www\.|\.tv|\.ac|\.com|\.edu|\.gov|\.int|\.mil|\.net|\.org|\.biz|\.info|\.name|\.pro|\.museum|\.co)([\d\w\.\/\%\+\-\=\&amp;\?\:\\\&quot;\'\,\|\~\;]*)\b",OQAws9.acZ32xfmrLja
+85,url,(\s|\n|^)(\w+://[^\s\n]+),g://zfN:JSd\ys
+87,url,([^\=&]+)(?<!param1|param2|param3)\=([^\=&]+)(&)?,~4PJiib=00] dU@/*&
+88,url,9[0-9],93
+89,url,"[a-zA-Z]{3,}://[a-zA-Z0-9\.]+/*[a-zA-Z0-9/\\%_.]*\?*[a-zA-Z0-9/\\%_.=&amp;]*",CTmNCya://lDb8/////////g0jYyD%N????????ajkJxgwz
+90,url,^((\d|\d\d|[0-1]\d\d|2[0-4]\d|25[0-5])\.(\d|\d\d|[0-1]\d\d|2[0-4]\d|25[0-5])\.(\d|\d\d|[0-1]\d\d|2[0-4]\d|25[0-5])\.(\d|\d\d|[0-1]\d\d|2[0-4]\d|25[0-5]))$,080.230.254.253
+91,url,^([a-zA-Z].*|[1-9].*)\.(((j|J)(p|P)(g|G))|((g|G)(i|I)(f|F)))$,jm.GiF
+92,url,"^[^\\\./:\*\?\""<>\|]{1}[^\\/:\*\?\""<>\|]{0,254}$",]@8
+94,url,"(((ht|f)tp(s?):\/\/)|(www\.[^ \[\]\(\)\n\r\t]+)|(([012]?[0-9]{1,2}\.){3}[012]?[0-9]{1,2})\/)([^ \[\]\(\),;&quot;'&lt;&gt;\n\r\t]+)([^\. \[\]\(\),;&quot;'&lt;&gt;\n\r\t])|(([012]?[0-9]{1,2}\.){3}[012]?[0-9]{1,2})",07.14.4.235
+95,url,^\\([^\\]+\\)*[^\/:*?&quot;&lt;&gt;|]?$,"\a/(\6U:\0Uq6HZ\	CI,.\"
+96,url,"^(([a-zA-Z0-9]([a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,6}/(DC=['\w\d\s\-\&amp;]+[,]*){2,})|((\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])/(DC=['\w\d\s\-\&amp;]+[,]*){2,})|((DC=['\w\d\s\-\&amp;]+[,]*){2,})$","x.OOiX5G.r.HGML3a8SO3in.LzU2fIyk.LV2ZYgLQWuy.j6EqBhwViws.hnRVcZbPl.zY6nW.J.ppKLd/DC=9uMWXmN,DC=K_86fyDC=	j3e21Dd,,,,,,DC=DBT17m5S74,,,,,,,,,DC=MU9 M8S2;e,,,,"
+97,url,"^(ht|f)tp((?<=http)s)?://((?<=http://)www|(?<=https://)www|(?<=ftp://)ftp)\.(([a-z][0-9])|([0-9][a-z])|([a-z0-9][a-z0-9\-]{1,2}[a-z0-9])|([a-z0-9][a-z0-9\-](([a-z0-9\-][a-z0-9])|([a-z0-9][a-z0-9\-]))[a-z0-9\-]*[a-z0-9]))\.(co|me|org|ltd|plc|net|sch|ac|mod|nhs|police|gov)\.uk(:\d+)?\/?$",httphttps://ftp://ftp.p5.ac.uk/
+98,url,^[a-z]+([a-z0-9-]*[a-z0-9]+)?(\.([a-z]+([a-z0-9-]*[a-z0-9]+)?)+)*$,iujyvcujcotfvthlj4aonbwb.ryqeqlwi7pphkbc4avpptfduljmwwgcmrjxnhyi6m8bztfspxnqnwhcgnqcwh-lcckz6flzohd3ggvryvvlyaw-hor5iftsjxzjymjzwfgcualf578ql.mxm269xcqpcwlfaewxa0l3yrsy-eoeyfeyanxxsfjwezs.sxphzg8krndh1mozlfxq71q6x3xmdcgajkfgftopwveksngikdy7o1pqaiyt2e4croyepnt.nwnnopnqsdzj2j0dq5wrpqaaucmqiglme.pstgiycbnzhbgvdv6ia77allojehmcimymndy30xricwozri.zhbqcpldjioztfwi8yqazdxptsx45qb7ztivg2jfthqhlwkgb1okk-kylyep0tnqvpip9-oogm1wwgk02xbkr.htinrnwa9dzssr84hacjtaibtyunbmqaqgne2y26fi8qqcbvo5rmwstddoojc.smczooaszrwyawkuenms7p39izdevnumwoheqlxhwdnmricefqbbwwinbmja5amiwvxbqsoyz0dmcqitcejih27fhvzxgtd8x.zcjaxejyhylx1hacjrzzyludnzmnoaamjixbrxg2ps191.aoky2y8luthde
+99,url,&lt;a\s*.*?href\s*=\s*['&quot;](?!http:\/\/).*?&gt;(.*?)&lt;\/a&gt;,&lt;a  ihref   	 =			    &Y{&gt;G&lt;/a&gt;
+100,url,"^(ht|f)tp((?<=http)s)?://((?<=http://)www|(?<=https://)www|(?<=ftp://)ftp)\.(([a-z][0-9])|([0-9][a-z])|([a-z0-9][a-z0-9\-]{1,2}[a-z0-9])|([a-z0-9][a-z0-9\-](([a-z0-9\-][a-z0-9])|([a-z0-9][a-z0-9\-]))[a-z0-9\-]*[a-z0-9]))\.(co|me|org|ltd|plc|net|sch|ac|mod|nhs|police|gov)\.uk$",ftp://http://www.92trq9h4.net.uk
+101,url,"^([a-zA-Z]\:|\\)\\([^\\]+\\)*[^\/:*?""<>|]+\.htm(l)?$",\\oU*v?]+GA\W\~E.@VhyV9T.htm
+102,url,"^((https?|ftp)\://((\[?(\d{1,3}\.){3}\d{1,3}\]?)|(([-a-zA-Z0-9]+\.)+[a-zA-Z]{2,4}))(\:\d+)?(/[-a-zA-Z0-9._?,'+&amp;%$#=~\\]+)*/?)$",ftp://[79.835.8.723]:5140/mC/0G89x-S/N44Q%ow/8hF/
+103,url,"^(http|https|ftp)\://[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(:[a-zA-Z0-9]*)?/?([a-zA-Z0-9\-\._\?\,\'/\\\+&amp;%\$#\=~])*[^\.\,\)\(\s]$",http://2XE.GN/yn_T
+105,url,"^([a-zA-Z]\:)(\\[^\\/:*?<>""|]*(?<![ ]))*(\.[a-zA-Z]{2,6})$","d:\.evsAE0b\I~(n(dJ\s\XV)CMyX@f\JFO,g\LsHg_C~2,\,LoI!)J5sU\@;e.DNUcn"
+106,url,\b(((\S+)?)(@|mailto\:|(news|(ht|f)tp(s?))\://)\S+)\b,mailto:^yF
+107,url,"^(http|https|ftp)\://(((25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\.){3}(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])|([a-zA-Z0-9_\-\.])+\.(com|net|org|edu|int|mil|gov|arpa|biz|aero|name|coop|info|pro|museum|uk|me))((:[a-zA-Z0-9]*)?/?([a-zA-Z0-9\-\._\?\,\'/\\\+&amp;%\$#\=~])*)$",http://151.211.250.202/Cs
+108,url,([a-zA-Z]:(\\w+)*\\[a-zA-Z0_9]+)?.xls,i:\gvSAzi?xls
+109,url,^[a-zA-Z0-9\-\.]+\.(com|org|net|mil|edu|COM|ORG|NET|MIL|EDU)$,v9Si.org
+110,url,(mailto\:|(news|(ht|f)tp(s?))\://)(([^[:space:]]+)|([^[:space:]]+)( #([^#]+)#)?),news://]]]]]
+111,url,[0-9A-Fa-f]{2}(\.?)[0-9A-Fa-f]{2}(\.?)[0-9A-Fa-f]{2}(\.?)[0-9A-Fa-f]{2},9e2cf1d4
+113,url,\.com/(\d+)$,.com/0143550264
+114,url,.*?$(?<!\.aspx),/(S|-w	v>
+115,url,(^[a-zA-Z0-9]+://),OxtEYCf0WD://
+116,url,"^(([a-z][0-9])|([0-9][a-z])|([a-z0-9][a-z0-9\-]{1,2}[a-z0-9])|([a-z0-9][a-z0-9\-](([a-z0-9\-][a-z0-9])|([a-z0-9][a-z0-9\-]))[a-z0-9\-]*[a-z0-9]))\.(co|me|org|ltd|plc|net|sch|ac|mod|nhs|police|gov)\.uk$",6f.nhs.uk
+117,url,^http://([a-zA-Z0-9_\-]+)([\.][a-zA-Z0-9_\-]+)+([/][a-zA-Z0-9\~\(\)_\-]*)+([\.][a-zA-Z0-9\(\)_\-]+)*$,http://rD.rMZu7f.Noc6.C5A.H19bcoN1.4gqGsO/Sh/Rwb5U)Q0Ac/-33Pp7ew/.6QZj.J(.p5RVJwSV9X.30X.ZGmwJ10hW.FwmjXVloc.5e.ecktIV9U.p
+119,url,^\[assembly: AssemblyVersion\(\&quot;([0-9]+)\.([0-9]+)\.([0-9]+)\.([0-9]+),[assembly: AssemblyVersion(&quot;9884321267.96842857.2211.03
 120,numbers,"^(0|(\+)?[1-9]{1}[0-9]{0,8}|(\+)?[1-3]{1}[0-9]{1,9}|(\+)?[4]{1}([0-1]{1}[0-9]{8}|[2]{1}([0-8]{1}[0-9]{7}|[9]{1}([0-3]{1}[0-9]{6}|[4]{1}([0-8]{1}[0-9]{5}|[9]{1}([0-5]{1}[0-9]{4}|[6]{1}([0-6]{1}[0-9]{3}|[7]{1}([0-1]{1}[0-9]{2}|[2]{1}([0-8]{1}[0-9]{1}|[9]{1}[0-5]{1})))))))))$",4112700189
 121,numbers,"^(0*100{1,1}\.?((?<=\.)0*)?%?$)|(^0*\d{0,2}\.?((?<=\.)\d*)?%?)$",000000100.
 122,numbers,"^100$|^[0-9]{1,2}$|^[0-9]{1,2}\,[0-9]{1,3}$",100

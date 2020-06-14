@@ -21,21 +21,22 @@ import org.slf4j.LoggerFactory;
 
 import xsystem.ng.XStructure;
 
-public class ParseCSV {
+public class LearnXStruct {
 
-    private final static Logger LOG = LoggerFactory.getLogger(ParseCSV.class.getName());
+    private final static Logger LOG = LoggerFactory.getLogger(LearnXStruct.class.getName());
 
     public static HashMap<String, ArrayList<Pair<String, XStructure>>> logs;
 
     public static ArrayList<XStructure> learned;
 
-    public ParseCSV(){
+    public LearnXStruct(){
 
-    HashMap<String, ArrayList<Pair<String, XStructure>>> _logs = learnStructs();
+        HashMap<String, ArrayList<Pair<String, XStructure>>> _logs = learnStructs();
 
-    ParseCSV.logs = _logs;
+        LearnXStruct.logs = _logs;
 
-    ParseCSV.learned = learned(_logs);
+        LearnXStruct.learned = learned(_logs);
+        
     }
 
     private HashMap<String, ArrayList<Pair<String, XStructure>>> learnStructs() {
@@ -149,6 +150,9 @@ public class ParseCSV {
 
     private ArrayList<XStructure> learned(HashMap<String, ArrayList<Pair<String, XStructure>>> logs){
 
+        if(learned != null)
+            return learned;
+        
         ArrayList<XStructure> res = new ArrayList<>();
 
         for(String s : logs.keySet()){

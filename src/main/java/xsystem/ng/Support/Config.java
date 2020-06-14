@@ -22,7 +22,7 @@ public class Config {
 
         if(splChars != null)
             return splChars;
-
+            
         ArrayList<Character> r = new ArrayList<Character>();
         for(int i = 0; i<=47; i++){
             char c = (char)i;

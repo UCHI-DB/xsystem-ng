@@ -3,34 +3,18 @@
  */
 package xsystem.ng;
 
-import java.util.ArrayList;
+import org.apache.log4j.BasicConfigurator;
+import org.javatuples.Pair;
 
-import xsystem.ng.Layers.Branch;
-import xsystem.ng.Layers.Symbol;
-import xsystem.ng.Layers.Token;
+import xsystem.ng.Learning.LabelAssignment;
 
 public class Library {
     public boolean someLibraryMethod() {
-        System.out.println("Works!");
-        Symbol x = new Symbol('x');
-        System.out.println(x);
-        Symbol y = x.addChar('y');
-        System.out.println(y);
-        Token t = new Token();
-        System.out.println(t.learnToken("x8z").learnToken("x8z").learnToken("x8z").learnToken("x8tT22233HHHFLJ").tokenStringGenerator);
-        Branch b = new Branch("abc/sahbk/n738642ad/da");
-        System.out.println(b.learnString("n738642ad/sahbk/njkad/da"));
-        System.out.println(b.merged(b, b.learnString("n738642ad/sahbk/njkad/da")));
-        XStructure xst = new XStructure();
-        ArrayList<String> lines = new ArrayList<>();
-        lines.add("ip/s/ita");
-        lines.add("shrey-arth");
-        lines.add("11/2wfh-sjhacs");
-        lines.add("11/2wfh-sjhacs");
-        lines.add("11/2wfh-sjhacs");
-        lines.add("11/2wfh-sjhacs");
-        System.out.println(xst.addNewLines(lines));
-        System.out.println(xst.addNewLines(lines).computeOutlierScore("shrey-arth"));
+        new LabelAssignment();
+        BasicConfigurator.configure();
+        for(Pair<XStructure, String> p : LabelAssignment.learnedXwithLabel){
+            System.out.println(p.getValue0().toString() + "  " + p.getValue1());
+        }
         return true;
     }
 }
