@@ -4,6 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/src/main/main.iml" filepath="$PROJECT_DIR$/src/main/main.iml" />
       <module fileurl="file://$PROJECT_DIR$/src/test/test.iml" filepath="$PROJECT_DIR$/src/test/test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/xsystem-ng.iml" filepath="$PROJECT_DIR$/.idea/modules/xsystem-ng.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/xsystem-ng.main.iml" filepath="$PROJECT_DIR$/.idea/modules/xsystem-ng.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/xsystem-ng.test.iml" filepath="$PROJECT_DIR$/.idea/modules/xsystem-ng.test.iml" />
     </modules>
   </component>
 </project>

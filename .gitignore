@@ -23,3 +23,12 @@
 hs_err_pid*
 /.gradle/
 /build/
+/.vscode/
+/bin
+/.idea
+
+# Eclipse classpath files
+*.classpath
+
+# Eclipse project files
+*.project
