@@ -3,16 +3,23 @@
  */
 package xsystem;
 
-import xsystem.learning.LearnXStruct;
+import java.util.ArrayList;
 
-// import xsystem.learning.LabelAssignment;
+import org.apache.log4j.BasicConfigurator;
+
+import xsystem.learning.LearningModel;
 
 public class Library {
     public boolean someLibraryMethod() {
+        BasicConfigurator.configure();
         String path = "src/main/resources/LearningData";
         String outputFile = "src/main/resources/Learned/LearnedXStructs.json";
-        LearnXStruct l =  new LearnXStruct();
-        l.learnStructs(path, outputFile);
+        LearningModel l = new LearningModel();
+        // l.learnStructs(path, outputFile);
+        ArrayList<String> s = new ArrayList<>();
+        s.add("Christopher");
+        s.add("Christopher");
+        System.out.println(l.labelAssignment(s));
         return true;
     }
 }

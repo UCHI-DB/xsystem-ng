@@ -2,6 +2,9 @@ package xsystem.layers;
 
 import java.util.ArrayList;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics;
 
 import xsystem.support.Config;
@@ -32,14 +35,14 @@ public class Token {
 	public ArrayList<XClass> representation;
 
 	public Token(){
-		symbols = new ArrayList<>();
-		doneAdding = false;
-		history = new ArrayList<>();
-		stdDev = 100.0;
-		archive = new ArrayList<>();
-		tokenStringGenerator = tokenStringGenerator(symbols);
-		scoreSoFar = ((double)archive.stream().mapToDouble(a -> a).sum())/(archive.size());
-		representation = representationFunc(symbols);
+		this.symbols = new ArrayList<>();
+		this.doneAdding = false;
+		this.history = new ArrayList<>();
+		this.stdDev = 100.0;
+		this.archive = new ArrayList<>();
+		this.tokenStringGenerator = tokenStringGenerator(symbols);
+		this.scoreSoFar = ((double)archive.stream().mapToDouble(a -> a).sum())/(archive.size());
+		this.representation = representationFunc(symbols);
 	}
 	
 	public Token(ArrayList<Symbol> symbols, Boolean doneAdding, ArrayList<Double> history, double stdDev, ArrayList<Double> archive) {
@@ -59,6 +62,93 @@ public class Token {
 			this.history = new ArrayList<>();
 			this.archive = new ArrayList<>();
 		}
+	}
+
+	@JsonCreator
+	public Token(@JsonProperty("symbols") ArrayList<Symbol> symbols, @JsonProperty("doneAdding") Boolean doneAdding, 
+	@JsonProperty("history") ArrayList<Double> history,@JsonProperty("stdDev") double stdDev,
+	@JsonProperty("archive") ArrayList<Double> archive, @JsonProperty("tokenStringGenerator") ArrayList<String> tokenStringGenerator,
+	@JsonProperty("scoreSoFar") double scoreSoFar, @JsonProperty("representation") ArrayList<XClass> representation)
+	{
+        super();
+        this.symbols = symbols;
+		this.doneAdding = doneAdding;
+		this.history = history;
+		this.stdDev = stdDev;
+		this.archive = archive;
+		this.tokenStringGenerator = tokenStringGenerator;
+		this.scoreSoFar = scoreSoFar;
+		this.representation = representation;
+    }
+	
+	// Getters and Setters
+
+	public ArrayList<Symbol> getSymbols() {
+		return symbols;
+	}
+
+	public void setSymbols(ArrayList<Symbol> symbols) {
+		this.symbols = symbols;
+	}
+
+	public Boolean getDoneAdding() {
+		return doneAdding;
+	}
+
+	public void setDoneAdding(Boolean doneAdding) {
+		this.doneAdding = doneAdding;
+	}
+
+	public ArrayList<Double> getHistory() {
+		return history;
+	}
+
+	public void setHistory(ArrayList<Double> history) {
+		this.history = history;
+	}
+
+	public double getStdDev() {
+		return stdDev;
+	}
+
+	public void setStdDev(double stdDev) {
+		this.stdDev = stdDev;
+	}
+
+	public ArrayList<Double> getArchive() {
+		return archive;
+	}
+
+	public void setArchive(ArrayList<Double> archive) {
+		this.archive = archive;
+	}
+
+	public ArrayList<String> getTokenStringGenerator() {
+		return tokenStringGenerator;
+	}
+
+	public void setTokenStringGenerator(ArrayList<String> tokenStringGenerator) {
+		this.tokenStringGenerator = tokenStringGenerator;
+	}
+
+	public double getScoreSoFar() {
+		return scoreSoFar;
+	}
+
+	public void setScoreSoFar(double scoreSoFar) {
+		this.scoreSoFar = scoreSoFar;
+	}
+
+	public ArrayList<XClass> getRepresentation() {
+		return representation;
+	}
+
+	public void setRepresentation(ArrayList<XClass> representation) {
+		this.representation = representation;
+	}
+
+	public boolean isTryToStop() {
+		return tryToStop;
 	}
 
 	private ArrayList<String> tokenStringGenerator(ArrayList<Symbol> symbols){

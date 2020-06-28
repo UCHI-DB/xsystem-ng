@@ -9,6 +9,9 @@ import java.util.Map;
 import java.util.Set;
 import java.util.Map.Entry;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics;
 import org.javatuples.Pair;
 import org.javatuples.Triplet;
@@ -36,6 +39,7 @@ public class XStructure {
 
     public ArrayList<String> minHashStringGenerator;
 
+    @JsonCreator
     public XStructure(){
         this.branches = new HashMap<>();
         this.lines = new ArrayList<>();
@@ -46,7 +50,6 @@ public class XStructure {
         this.minHashStringGenerator = minHashStringGenerator(tokensGenerator, hingesGenerator);
 
     }
-
     public XStructure(ArrayList<String> _lines, HashMap<Branch, Double> _branches, double _bThresh, ArrayList<Double> _history){
         this.branches = _branches;
         this.lines = (Config.tts) ? _lines : new ArrayList<String>();
@@ -57,7 +60,62 @@ public class XStructure {
         this.minHashStringGenerator = minHashStringGenerator(tokensGenerator(_branches), hingesGenerator(_branches));
     }
 
-    //Compute the tokensGenerator
+    @JsonCreator
+    public XStructure(@JsonProperty("lines") ArrayList<String> lines, @JsonProperty("branches") HashMap<Branch, Double> branches, 
+    @JsonProperty("branchingThreshold") double branchingThreshold, @JsonProperty("history") ArrayList<Double> history,
+    @JsonProperty("tokensGenerator") ArrayList<String> tokensGenerator, @JsonProperty("hingesGenerator") ArrayList<String> hingesGenerator,
+    @JsonProperty("minHashStringGenerator") ArrayList<String> minHashStringGenerator) {
+        super();
+        this.branches = branches;
+        this.lines = lines;
+        this.branchingThreshold = branchingThreshold;
+        this.history = history;
+        this.tokensGenerator = tokensGenerator;
+        this.hingesGenerator = hingesGenerator;
+        this.minHashStringGenerator = minHashStringGenerator;
+    }
+
+    public ArrayList<String> getTokensGenerator() {
+		return tokensGenerator;
+	}
+
+	public void setTokensGenerator(ArrayList<String> tokensGenerator) {
+		this.tokensGenerator = tokensGenerator;
+	}
+
+	public ArrayList<String> getHingesGenerator() {
+		return hingesGenerator;
+	}
+
+	public void setHingesGenerator(ArrayList<String> hingesGenerator) {
+		this.hingesGenerator = hingesGenerator;
+	}
+
+	public ArrayList<String> getMinHashStringGenerator() {
+		return minHashStringGenerator;
+	}
+
+	public void setMinHashStringGenerator(ArrayList<String> minHashStringGenerator) {
+		this.minHashStringGenerator = minHashStringGenerator;
+	}
+
+	public HashMap<Branch, Double> getBranches() {
+		return branches;
+	}
+
+	public ArrayList<String> getLines() {
+		return lines;
+	}
+
+	public double getBranchingThreshold() {
+		return branchingThreshold;
+	}
+
+	public ArrayList<Double> getHistory() {
+		return history;
+	}
+
+	//Compute the tokensGenerator
     private ArrayList<String> tokensGenerator (HashMap<Branch, Double> brnches){
         ArrayList<ArrayList<Wrapper>> lst = new ArrayList<>();
 

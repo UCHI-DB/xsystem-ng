@@ -8,6 +8,9 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import static java.util.Map.Entry.*;
 import static java.util.stream.Collectors.*;
 
@@ -57,6 +60,62 @@ public class Symbol {
 		this.total = _total;
 		this.representation = representationFunction(_charHist, _cclassHist, _total);
 		this.symbolStringGenerator = this.representation.lshDomain();
+	}
+
+	@JsonCreator
+	public Symbol(@JsonProperty("charHist") HashMap<Character, Double> charHist, 
+	@JsonProperty("cclassHist") HashMap<CharClass, ArrayList<Character> > cclassHist, 
+	@JsonProperty("total") int total, @JsonProperty("representation") XClass representation,
+	@JsonProperty("symbolStringGenerator") ArrayList<String> symbolStringGenerator)
+	{
+        super();
+        this.charHist = charHist;
+		this.cclassHist = cclassHist;
+		this.total = total;
+		this.representation = representation;
+		this.symbolStringGenerator = symbolStringGenerator;
+	}
+	
+	//Getters and Setters
+
+	public HashMap<Character, Double> getCharHist() {
+		return charHist;
+	}
+
+	public void setCharHist(HashMap<Character, Double> charHist) {
+		this.charHist = charHist;
+	}
+
+	public HashMap<CharClass, ArrayList<Character>> getCclassHist() {
+		return cclassHist;
+	}
+
+	public void setCclassHist(HashMap<CharClass, ArrayList<Character>> cclassHist) {
+		this.cclassHist = cclassHist;
+	}
+
+	public int getTotal() {
+		return total;
+	}
+
+	public void setTotal(int total) {
+		this.total = total;
+	}
+
+	public XClass getRepresentation() {
+		return representation;
+	}
+
+	public void setRepresentation(XClass representation) {
+		this.representation = representation;
+	}
+
+	public ArrayList<String> getSymbolStringGenerator() {
+		return symbolStringGenerator;
+	}
+
+	public void setSymbolStringGenerator(ArrayList<String> symbolStringGenerator) {
+		this.symbolStringGenerator = symbolStringGenerator;
 	}
 
 	public Symbol addChar(char c){

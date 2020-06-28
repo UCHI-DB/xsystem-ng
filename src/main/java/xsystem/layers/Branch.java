@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics;
 
 import xsystem.support.Config;
@@ -34,7 +37,7 @@ public class Branch {
 		checkRep();
 	}
 
-	public Branch(String str){
+	public Branch(String str) {
 		ArrayList<String> _lines = new ArrayList<>();
 		_lines.add(str);
 
@@ -48,6 +51,63 @@ public class Branch {
 		this.tokenizerStringGenerator = tokenizerStringGenerator(_tokenizers);
 
 		checkRep();
+	}
+
+	@JsonCreator
+	public Branch(@JsonProperty("lines") ArrayList<String> lines, 
+	@JsonProperty("tokenStructs") ArrayList<Token> tokenStructs, 
+	@JsonProperty("tokenizers") ArrayList<String> tokenizers, 
+	@JsonProperty("branchStringGenerator") ArrayList<String> branchStringGenerator,
+	@JsonProperty("tokenizerStringGenerator") ArrayList<String> tokenizerStringGenerator)
+	{
+        super();
+        this.lines = lines;
+		this.tokenStructs = tokenStructs;
+		this.tokenizers = tokenizers;
+		this.branchStringGenerator = branchStringGenerator;
+		this.tokenizerStringGenerator = tokenizerStringGenerator;
+    }
+	
+	//Getters and Setters
+
+	public ArrayList<String> getLines() {
+		return lines;
+	}
+
+	public void setLines(ArrayList<String> lines) {
+		this.lines = lines;
+	}
+
+	public ArrayList<Token> getTokenStructs() {
+		return tokenStructs;
+	}
+
+	public void setTokenStructs(ArrayList<Token> tokenStructs) {
+		this.tokenStructs = tokenStructs;
+	}
+
+	public ArrayList<String> getTokenizers() {
+		return tokenizers;
+	}
+
+	public void setTokenizers(ArrayList<String> tokenizers) {
+		this.tokenizers = tokenizers;
+	}
+
+	public ArrayList<String> getBranchStringGenerator() {
+		return branchStringGenerator;
+	}
+
+	public void setBranchStringGenerator(ArrayList<String> branchStringGenerator) {
+		this.branchStringGenerator = branchStringGenerator;
+	}
+
+	public ArrayList<String> getTokenizerStringGenerator() {
+		return tokenizerStringGenerator;
+	}
+
+	public void setTokenizerStringGenerator(ArrayList<String> tokenizerStringGenerator) {
+		this.tokenizerStringGenerator = tokenizerStringGenerator;
 	}
 
 	//BranchStringGenerator function
@@ -111,7 +171,7 @@ public class Branch {
 		String[] subStrs = str.split("[" + Pattern.quote ( new String(Config.splChars) ) + "]", -1);
 
 		for(int i = 0 ; i<subStrs.length; i++)
-			result.add(new Token());
+			result.add(new Token().learnToken(subStrs[i]));
 
 		return result;
 	}
@@ -222,7 +282,6 @@ public class Branch {
 
 	public String toString(){
 		String res = "";
-	
 		for(int i=0; i<tokenStructs.size() && i<tokenizers.size(); i++){
 			res += tokenStructs.get(i).toString()+tokenizers.get(i);
 		}
