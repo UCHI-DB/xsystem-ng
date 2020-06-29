@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.regex.Pattern;
-import java.util.regex.PatternSyntaxException;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
@@ -133,7 +132,7 @@ public class LearningModel {
         return result;
     }
 
-    public void labelAssignmentWithRegex(String sampleRegexFolderPath){
+    public void labelAssignmentWithRegex(String sampleRegexFolderPath, String learnedXStructsJSONfolderpath, String outFile){
         File sampleRegexFolder = new File(sampleRegexFolderPath);
         ArrayList<Pair<String, String>> regexList = new ArrayList<>();
 
@@ -150,13 +149,14 @@ public class LearningModel {
                 List<String[]> myEntries = reader.readAll();
 
                 for(String[] entry : myEntries){
-                    String regex = entry[0];
-                    String type = entry[1];
+                    String regex = entry[1];
+                    String type = entry[0];
                     try {
                         Pattern.compile(regex);
                         regexList.add(Pair.with(regex, type));
-                    } catch (PatternSyntaxException exception) {
+                    } catch (Exception exception) {
                         LOG.info("[Error] PatternSyntaxException in " + regex + " of type " + type + " in file " + file.getName());
+                        continue;
                     }
                 }
 
@@ -165,7 +165,7 @@ public class LearningModel {
             }
         }
 
-        File folder = new File("src/main/resources/Learned");
+        File folder = new File(learnedXStructsJSONfolderpath);
         ObjectMapper mapper = new ObjectMapper();
         ObjectWriter writer = mapper.writer(new DefaultPrettyPrinter());
         ArrayList<XStructType> result = new ArrayList<>();
@@ -181,10 +181,12 @@ public class LearningModel {
                             break;
                         }
                     }
+                    LOG.info("XStruct of colName " + struct.type + " is labeled " + type);
+
                     result.add(new XStructType(type, struct.xStructure));
                 }
             }
-            writer.writeValue(new File("src/main/resources/Learned/LearnedFromUser.json"), result);
+            writer.writeValue(new File(outFile), result);
 
 
         } catch (Exception e) {

@@ -41,7 +41,7 @@ public class LabelAssignmentTest {
 
         try {
 
-            CSVWriter writer = new CSVWriter(new FileWriter("src/test/resources/output/defaultLabels.csv"));
+            CSVWriter writer = new CSVWriter(new FileWriter("src/test/resources/output/validation/defaultLabels.csv"));
 
             for(File inputFile : inputFolder.listFiles()){
                 String head = "DataLabels from file " + inputFile.getName();
@@ -91,7 +91,7 @@ public class LabelAssignmentTest {
 
             writer.close();
         } catch (Exception e) {
-            //TODO: handle exception
+            LOG.info("[Error] " + e);
         }
     }
 
