@@ -28,6 +28,8 @@ public class LearningModel {
 
     private final static Logger LOG = LoggerFactory.getLogger(LearningModel.class.getName());
 
+    public final static String defaultXLabelRef = "src/main/resources/Learned";
+
     public void learnStructs(String inputFolder, String outputJsonFile) {
 
         File folder = new File(inputFolder);
@@ -97,8 +99,8 @@ public class LearningModel {
         }
     }
 
-    public String labelAssignment(ArrayList<String> strList){
-        File folder = new File("src/main/resources/Learned");
+    public String labelAssignment(ArrayList<String> strList, String referenceFilePath){
+        File folder = new File(referenceFilePath);
 
         ObjectMapper mapper = new ObjectMapper();
         String result = "Not Known";
@@ -122,7 +124,7 @@ public class LearningModel {
                     score = maxVal;
                     result = structs.get(maxIdx).type;
                 }
-                LOG.info("After checking from File - " + file.getName() + " computed type is " + result);
+                LOG.info("After referring from File - " + file.getName() + " computed type is " + result);
             }
         } catch (Exception e) {
             LOG.info("[Error] " + e);

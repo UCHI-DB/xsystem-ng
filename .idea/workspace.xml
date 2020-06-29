@@ -20,66 +20,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8325e81e-12ca-4f2d-bc2d-b907e46c7d2a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__antlr_antlr_2_7_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_mifmif_generex_1_0_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_findbugs_jsr305_3_0_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_errorprone_error_prone_annotations_2_3_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_guava_failureaccess_1_0_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_guava_guava_28_2_jre.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_guava_listenablefuture_9999_0_empty_to_avoid_conflict_with_guava.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_j2objc_j2objc_annotations_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_opencsv_opencsv_5_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__commons_beanutils_commons_beanutils_1_9_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__commons_collections_commons_collections_3_2_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__commons_logging_commons_logging_1_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__dk_brics_automaton_automaton_1_11_8.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__dom4j_dom4j_1_6_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__javax_transaction_jta_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_13.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__log4j_log4j_1_2_17.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_apache_commons_commons_collections4_4_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_apache_commons_commons_lang3_3_10.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_apache_commons_commons_math3_3_6_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_apache_commons_commons_text_1_8.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_checkerframework_checker_qual_2_10_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hibernate_hibernate_commons_annotations_3_2_0_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hibernate_hibernate_core_3_6_7_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hibernate_javax_persistence_hibernate_jpa_2_0_api_1_0_1_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_javatuples_javatuples_1_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_slf4j_slf4j_api_1_7_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_slf4j_slf4j_log4j12_1_7_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/xsystem-ng.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/xsystem-ng.main.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/xsystem-ng.test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/.classpath" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/main/Learned/LearnedXStructs.csv" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/Learned/LearnedXStructs.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xsystem/ng/Enums/CharClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xsystem/enums/CharClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xsystem/ng/Enums/LCC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xsystem/enums/LCC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xsystem/ng/Enums/NUM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xsystem/enums/NUM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xsystem/ng/Enums/SPC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xsystem/enums/SPC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xsystem/ng/Enums/UCC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xsystem/enums/UCC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xsystem/ng/Enums/XClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xsystem/enums/XClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xsystem/ng/Enums/X_ANY.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xsystem/enums/X_ANY.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xsystem/ng/Enums/X_LCC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xsystem/enums/X_LCC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xsystem/ng/Enums/X_NUM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xsystem/enums/X_NUM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xsystem/ng/Enums/X_OR.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xsystem/enums/X_OR.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xsystem/ng/Enums/X_SPEC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xsystem/enums/X_SPEC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xsystem/ng/Enums/X_UCC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xsystem/enums/X_UCC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xsystem/ng/Layers/Branch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xsystem/layers/Branch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xsystem/ng/Layers/Symbol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xsystem/layers/Symbol.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xsystem/ng/Layers/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xsystem/layers/Token.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xsystem/ng/Learning/LabelAssignment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xsystem/learning/LabelAssignment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xsystem/ng/Learning/LearnXStruct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xsystem/learning/LearnXStruct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xsystem/ng/Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xsystem/Library.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xsystem/ng/Support/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xsystem/support/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xsystem/ng/Support/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xsystem/support/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xsystem/ng/Support/Wrapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xsystem/support/Wrapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xsystem/ng/XStructure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xsystem/XStructure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Learned/LearnedXStructs.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Learned/LearnedXStructs.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/xsystem/ng/LibraryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/xsystem/LibraryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.buildship.core.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/.settings/org.eclipse.buildship.core.prefs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/LearningData/MOCK_DATA.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/LearningData/dates.csv" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/LearningData/dates.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/LearningData/number.csv" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/LearningData/number.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/xsystem/Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xsystem/Library.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/xsystem/XStructure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xsystem/XStructure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/xsystem/learning/LearningModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xsystem/learning/LearningModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Learned/LearnedXStructs.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Learned/LearnedXStructs.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/LearningData/MOCK_DATA.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/LearningData/dateTime.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/LearningData/dates.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/LearningData/dates.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/LearningData/number.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/LearningData/number.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/LearningData/phone-no.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/LearningData/phone-no.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

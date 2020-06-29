@@ -408,14 +408,14 @@ public class XStructure {
         double tscore = 0.0;
         double sum = 0.0;
 
-        for(Branch b1 : branches.keySet()){
+        for(Branch b1 : this.branches.keySet()){
             ArrayList<Double> scores = new ArrayList<>();
 
             for(Branch b2 : brLst)
                 scores.add(b2.superScore(b1));
 
-            tscore += Collections.min(scores)*branches.get(b1);
-            sum += branches.get(b1);
+            tscore += Collections.min(scores)*this.branches.get(b1);
+            sum += this.branches.get(b1);
 
         }
         return tscore/sum;
