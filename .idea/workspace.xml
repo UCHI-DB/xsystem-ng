@@ -19,24 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8325e81e-12ca-4f2d-bc2d-b907e46c7d2a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/.classpath" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.buildship.core.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/.settings/org.eclipse.buildship.core.prefs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/main/LearningData/MOCK_DATA.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/main/LearningData/dates.csv" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/LearningData/dates.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/main/LearningData/number.csv" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/LearningData/number.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xsystem/Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xsystem/Library.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xsystem/XStructure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xsystem/XStructure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/xsystem/learning/LearningModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/xsystem/learning/LearningModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Learned/LearnedXStructs.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Learned/LearnedXStructs.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/LearningData/MOCK_DATA.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/LearningData/dateTime.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/LearningData/dates.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/LearningData/dates.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/LearningData/number.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/LearningData/number.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/LearningData/phone-no.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/LearningData/phone-no.csv" afterDir="false" />
-    </list>
+    <list default="true" id="8325e81e-12ca-4f2d-bc2d-b907e46c7d2a" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

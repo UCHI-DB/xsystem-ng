@@ -31,6 +31,7 @@ public class LearnXStructTest {
         model.learnStructs(folder, outFile);
     }
 
+    //Delete the generated CSV files and folder
     @After
     public void cleanup() {
 		File dir = new File(folder);
