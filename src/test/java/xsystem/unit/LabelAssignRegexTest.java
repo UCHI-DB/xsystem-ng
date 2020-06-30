@@ -13,7 +13,7 @@ public class LabelAssignRegexTest {
 
         LearningModel model = new LearningModel();
 
-        String regexFilePath = "src/test/resources/regexData";
+        String regexFilePath = "src/test/resources/regexData/regexandType.csv";
         String learnedXstructfile = "src/test/resources/output/learned";
         String outputFile = "src/test/resources/output/validation/regexMatched.json";
 
