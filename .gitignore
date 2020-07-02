@@ -6,6 +6,7 @@
 .settings/
 .vscode/
 bin/
+META-INF/
 
 # Log file
 *.log
