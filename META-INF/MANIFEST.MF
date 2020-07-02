@@ -1,4 +1,0 @@
-Manifest-Version: 1.0
-Implementation-Title: xsystem-ng
-Implementation-Version: 0.1.0
-
