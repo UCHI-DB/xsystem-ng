@@ -13,20 +13,34 @@ import xsystem.support.Config;
 import xsystem.support.Utils;
 import xsystem.support.Wrapper;
 
+/**Represents the Branch Layer of the XStructure.
+ * @author Ipsita Mohanty
+ * @version 0.0.1
+ * @since 0.0.1
+*/
 public class Branch {
 
-//Branch Layer of the XStructure
-
+	/**List of lines the branch has learned*/
 	public ArrayList<String> lines;
 
+	/**The list of Tokens in the Branch.*/
 	public ArrayList<Token> tokenStructs;
 
+	/**List of tokenizers in the Branch*/
 	public ArrayList<String> tokenizers;
 
+	/**Branch String generator*/
 	public ArrayList<String> branchStringGenerator;
 
+	/**Tokenizer String generator*/
 	public ArrayList<String> tokenizerStringGenerator;
 
+	/**
+	 * Creates a Branch with given parameters
+	 * @param _l List of lines
+	 * @param _tknzs List of tokenizers
+	 * @param _tks List of Tokens
+	 */
 	public Branch(ArrayList<String> _l, ArrayList<String> _tknzs, ArrayList<Token> _tks){
 		this.lines = ((Config.tts) ? _l : new ArrayList<>());
 		this.tokenStructs = _tks;
@@ -37,6 +51,10 @@ public class Branch {
 		checkRep();
 	}
 
+	/**
+	 * Creates a Branch given a String
+	 * @param str the given String
+	 */
 	public Branch(String str) {
 		ArrayList<String> _lines = new ArrayList<>();
 		_lines.add(str);
@@ -53,6 +71,14 @@ public class Branch {
 		checkRep();
 	}
 
+	/**
+	 * Creates a Branch given all the parameters
+	 * @param lines List of lines
+	 * @param tokenStructs List of Tokens
+	 * @param tokenizers List of tokenizers
+	 * @param branchStringGenerator Branch String generator
+	 * @param tokenizerStringGenerator Tokenizer String generator
+	 */
 	@JsonCreator
 	public Branch(@JsonProperty("lines") ArrayList<String> lines, 
 	@JsonProperty("tokenStructs") ArrayList<Token> tokenStructs, 
@@ -68,44 +94,82 @@ public class Branch {
 		this.tokenizerStringGenerator = tokenizerStringGenerator;
     }
 	
-	//Getters and Setters
-
+	/**
+	 * Gets the list of lines
+	 * @return list of lines
+	 */
 	public ArrayList<String> getLines() {
 		return lines;
 	}
 
+	/**
+	 * Sets the lines variable
+	 * @param lines lines list
+	 */
 	public void setLines(ArrayList<String> lines) {
 		this.lines = lines;
 	}
 
+	/**
+	 * Gets the Tokens in the Branch
+	 * @return Tokens contained
+	 */
 	public ArrayList<Token> getTokenStructs() {
 		return tokenStructs;
 	}
 
+	/**
+	 * Sets the Tokens in Branch
+	 * @param tokenStructs Token List
+	 */
 	public void setTokenStructs(ArrayList<Token> tokenStructs) {
 		this.tokenStructs = tokenStructs;
 	}
 
+	/**
+	 * Gets the Tokenizers in the Branch
+	 * @return List of Tokenizers
+	 */
 	public ArrayList<String> getTokenizers() {
 		return tokenizers;
 	}
 
+	/**
+	 * Sets the tokenizers in the branch
+	 * @param tokenizers List of Tokenizers
+	 */
 	public void setTokenizers(ArrayList<String> tokenizers) {
 		this.tokenizers = tokenizers;
 	}
 
+	/**
+	 * Gets the BranchString generator
+	 * @return BranchString generator
+	 */
 	public ArrayList<String> getBranchStringGenerator() {
 		return branchStringGenerator;
 	}
 
+	/**
+	 * Sets the BranchString generator
+	 * @param branchStringGenerator BranchString generator
+	 */
 	public void setBranchStringGenerator(ArrayList<String> branchStringGenerator) {
 		this.branchStringGenerator = branchStringGenerator;
 	}
 
+	/**
+	 * Gets the TokenizerString Genrator
+	 * @return TokenizerString Genrator
+	 */
 	public ArrayList<String> getTokenizerStringGenerator() {
 		return tokenizerStringGenerator;
 	}
 
+	/**
+	 * Sets the TokenizerString Genrator
+	 * @param tokenizerStringGenerator TokenizerString Genrator
+	 */
 	public void setTokenizerStringGenerator(ArrayList<String> tokenizerStringGenerator) {
 		this.tokenizerStringGenerator = tokenizerStringGenerator;
 	}
@@ -145,13 +209,17 @@ public class Branch {
 
 	}
 
-	//Assertion function to keep a check
+	/** Assertion function to keep a check */ 
 	public void checkRep(){
 		assert tokenStructs.size() == tokenizers.size() : "Not Valid";
 		assert tokenizers.get(tokenizers.size()-1).equals("$");
 	}
 
-	// Tokenizes a string, returning hinges (called once for now, every iteration later)
+	/**
+	 * Tokenizes a string, returning hinges (called once for now, every iteration later)
+	 * @param str input String
+	 * @return The hinges in the input String
+	 */
 	public ArrayList<String> findTokenizers (String str){
 		ArrayList<String> result = new ArrayList<>();
 		new Config();
@@ -165,7 +233,11 @@ public class Branch {
 		return result;
 	}
 
-	// Makes a set of initialized token structures (called once)
+	/**
+	 * Makes a set of initialized token structures (called once)
+	 * @param str input String
+	 * @return List of Token Structures
+	 */
 	public ArrayList<Token> makeTokenStructs (String str){
 		ArrayList<Token> result = new ArrayList<>();
 		String[] subStrs = str.split("[" + Pattern.quote ( new String(Config.splChars) ) + "]", -1);
@@ -176,6 +248,11 @@ public class Branch {
 		return result;
 	}
 
+	/**
+	 * Compute the score of input String from a Branch
+	 * @param str input String
+	 * @return computed score
+	 */
 	public double scoreString(String str){
 		ArrayList<String> tokens = new ArrayList<>();
 		ArrayList<String> tokeniseStr = tokenizeString(str);
@@ -193,7 +270,11 @@ public class Branch {
 		return sum/(str.length() + 0.01);
 	}
 
-	// Tokenize a string based on tokenizers
+	/**
+	 * Tokenize a string based on tokenizers
+	 * @param str input String
+	 * @return tokenized String
+	 */
 	public ArrayList<String> tokenizeString (String str){
 		String tokStr = tokenizers.stream().map(Object::toString).collect(Collectors.joining(""));
 		String[] splitted = str.split("[" + Pattern.quote ( tokStr ) + "]", -1);
@@ -205,7 +286,11 @@ public class Branch {
 		return result;
 	}
 
-	// Learn a new string
+	/**
+	 * Learn a new string
+	 * @param str String to be learned
+	 * @return Branch after learning the given String
+	 */
 	public Branch learnString(String str){
 		checkRep();
 
@@ -230,7 +315,11 @@ public class Branch {
 		return new Branch(newLines, tokenizers, newTokens);
 	}
 
-	// Generate random strings from this branch
+	/**
+	 * Generate n random strings from this branch
+	 * @param n no. of strings to be genrated
+	 * @return list of generated strings
+	 */
 	public ArrayList<String> generateRandomStrings (int n){
 		ArrayList<String> res = new ArrayList<>();
 		
@@ -245,7 +334,11 @@ public class Branch {
 		return res;
 	}
 
-	// Check if this branch contains another branch
+	/**
+	 * Check if this branch contains another branch
+	 * @param other the other Branch
+	 * @return the comuted score based on similarity
+	 */
 	public double superScore(Branch other){
 		double stddev = Double.MAX_VALUE;
 		DescriptiveStatistics allScores = new DescriptiveStatistics();
@@ -261,7 +354,10 @@ public class Branch {
 		return allScores.getSum()/(allScores.getN()+0.1) + 0.1;
 	}
 
-	// Reset the done_adding counter for all of the tokens
+	/**
+	 * Reset the doneAdding counter for all of the Tokens
+	 * @return a new Branch will reseted doneAdding Tokens
+	 */
 	public Branch reopened(){
 		ArrayList<Token> reTok = new ArrayList<>();
 		for(Token t : tokenStructs) 
@@ -270,7 +366,12 @@ public class Branch {
 		return new Branch(lines,tokenizers, reTok);
 	}
 
-	// Merges two branch structures
+	/**
+	 * Merges two branch structures
+	 * @param outer the outer Branch
+	 * @param inner the inner Branch
+	 * @return the merged Branch
+	 */
 	public Branch merged(Branch outer, Branch inner){
 		Branch merged = outer.reopened();
 
@@ -280,6 +381,9 @@ public class Branch {
 		return merged;
 	}
 
+	/** Converts Branch to String
+	 * @return string representation of a Branch
+	*/
 	public String toString(){
 		String res = "";
 		for(int i=0; i<tokenStructs.size() && i<tokenizers.size(); i++){

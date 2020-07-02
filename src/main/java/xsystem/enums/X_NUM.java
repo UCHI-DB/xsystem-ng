@@ -5,6 +5,11 @@ import java.util.Random;
 
 import xsystem.support.Config;
 
+/** Represents Numeral Character in a XStructure.
+ * @author Ipsita Mohanty
+ * @version 0.0.1
+ * @since 0.0.1
+*/
 public class X_NUM implements XClass {
 	public String representation(){
         return "\\d";

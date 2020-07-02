@@ -9,6 +9,7 @@
 plugins {
     // Apply the java-library plugin to add support for Java Library
     id 'java-library'
+    id 'distribution'
 }
 
 repositories {
@@ -24,14 +25,24 @@ dependencies {
     // This dependency is used internally, and not exposed to consumers on their own compile classpath.
     implementation 'com.google.guava:guava:28.2-jre'
     implementation 'org.hibernate:hibernate-core:3.6.7.Final'
+
+    //CSVReader/Writer dependency
     implementation 'com.opencsv:opencsv:5.2'
+
+    //Supports tuples in Java
     implementation 'org.javatuples:javatuples:1.2'
-    implementation "com.github.mifmif:generex:1.0.2"
+
+    //Common Input-Output
     implementation "commons-io:commons-io:+"
 
+    //Data extraction from lists
     implementation group: 'commons-collections', name: 'commons-collections', version: '3.2'
+
+    // logging
     implementation group: 'org.slf4j', name:'slf4j-api', version: '1.7.2'
     implementation group: 'org.slf4j', name:'slf4j-log4j12', version: '1.7.2'
+
+    //JSON dependencies
     implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.0.1'
 
     // Use JUnit test framework

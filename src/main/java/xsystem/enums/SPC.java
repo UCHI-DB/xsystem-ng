@@ -5,6 +5,11 @@ import java.util.HashMap;
 
 import xsystem.support.Config;
 
+/** Represents Special Characters in string.
+ * @author Ipsita Mohanty
+ * @version 0.0.1
+ * @since 0.0.1
+*/
 public class SPC implements CharClass {
     String str;
     String realStr;

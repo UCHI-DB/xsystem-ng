@@ -22,20 +22,31 @@ import xsystem.enums.X_ANY;
 import xsystem.enums.X_OR;
 import xsystem.enums.X_SPEC;
 
+/**Represents the Symbol Layer of the XStructure.
+ * @author Ipsita Mohanty
+ * @version 0.0.1
+ * @since 0.0.1
+*/
 public class Symbol {
 
-//Symbol Layer of the XStructure
-
+	/**Character History - Represents history of characters learned by a Symbol.*/
 	public HashMap<Character, Double> charHist;
 
+	/**CharacterClass History - Represents history of CharClass learned by a Symbol.*/
 	public HashMap<CharClass, ArrayList<Character> > cclassHist;
 
+	/** Total characters learned by a Symbol.*/
 	public int total;
 
+	/**XClass representation of a Symbol.*/
 	public XClass representation;
 
+	/**Symbol String List.*/
 	public ArrayList<String> symbolStringGenerator;
 
+	/** Creates a Symbol with the specified character.
+	 * @param c The character specified
+	*/
 	public Symbol(char c) {
 		HashMap<Character, Double> _charHist = new HashMap<Character, Double>();
 		_charHist.put(c, 1.0);
@@ -54,6 +65,12 @@ public class Symbol {
 		this.symbolStringGenerator = _symbolStringGenerator;
 	}
 
+	/** 
+	 * Creates a Symbol with the specified character history, characterClass history and total characters learned.
+	 * @param _charHist The character history
+	 * @param _cclassHist The characterClass history
+	 * @param _total total characters learned
+	*/
 	public Symbol(HashMap<Character, Double> _charHist, HashMap<CharClass, ArrayList<Character> > _cclassHist, int _total) {
 		this.charHist = _charHist;
 		this.cclassHist = _cclassHist;
@@ -62,6 +79,13 @@ public class Symbol {
 		this.symbolStringGenerator = this.representation.lshDomain();
 	}
 
+	/**Creates a Symbol with all parameters provided.
+	 *  @param charHist The character history
+	 *  @param cclassHist The characterClass history
+	 *  @param total total characters learned
+	 *  @param representation XClass representation
+	 *  @param symbolStringGenerator Symbol String List
+	*/
 	@JsonCreator
 	public Symbol(@JsonProperty("charHist") HashMap<Character, Double> charHist, 
 	@JsonProperty("cclassHist") HashMap<CharClass, ArrayList<Character> > cclassHist, 
@@ -76,48 +100,80 @@ public class Symbol {
 		this.symbolStringGenerator = symbolStringGenerator;
 	}
 	
-	//Getters and Setters
-
+	/** Gets the character history
+	 * @return character history
+	*/
 	public HashMap<Character, Double> getCharHist() {
 		return charHist;
 	}
 
+	/** Sets the character history
+	 * @param charHist character history
+	*/
 	public void setCharHist(HashMap<Character, Double> charHist) {
 		this.charHist = charHist;
 	}
 
+	/** Gets the characterClass history
+	 * @return characterClass history
+	*/
 	public HashMap<CharClass, ArrayList<Character>> getCclassHist() {
 		return cclassHist;
 	}
 
+	/** Sets the characterClass history
+	 * @param cclassHist characterClass history
+	*/
 	public void setCclassHist(HashMap<CharClass, ArrayList<Character>> cclassHist) {
 		this.cclassHist = cclassHist;
 	}
 
+	/** Gets the total characters learned
+	 * @return total characters learned
+	*/
 	public int getTotal() {
 		return total;
 	}
 
+	/** Sets the total characters learned
+	 * @param total total characters learned
+	*/
 	public void setTotal(int total) {
 		this.total = total;
 	}
 
+	/** Sets the XClass representation
+	 * @return XClass representation
+	*/
 	public XClass getRepresentation() {
 		return representation;
 	}
 
+	/** Sets the XClass representation
+	 * @param representation XClass representation
+	*/
 	public void setRepresentation(XClass representation) {
 		this.representation = representation;
 	}
 
+	/** Gets the Symbol String List
+	 * @return Symbol String List
+	*/
 	public ArrayList<String> getSymbolStringGenerator() {
 		return symbolStringGenerator;
 	}
 
+	/** Sets the Symbol String List
+	 * @param symbolStringGenerator Symbol String List
+	*/
 	public void setSymbolStringGenerator(ArrayList<String> symbolStringGenerator) {
 		this.symbolStringGenerator = symbolStringGenerator;
 	}
 
+	/** Adds given character to a Symbol
+	 * @param c character
+	 * @return Symbol after learning the given character
+	*/
 	public Symbol addChar(char c){
 		HashMap<Character, Double> _charHist = new HashMap<>();
 		_charHist.putAll(charHist);
@@ -216,6 +272,10 @@ public class Symbol {
 		}
 	}
 
+	/** Computes the score of a character in a particular Symbol
+	 * @param c character
+	 * @return score
+	*/
 	public double scoreChar (char c){
 		if(!(cclassHist.containsKey(Utils.getCharacterClass(c))))
 			return 1.0;
@@ -226,6 +286,9 @@ public class Symbol {
 		
 	}
 
+	/** Converts Symbol to String
+	 * @return string representation of a Symbol
+	*/
 	public String toString() {
 		return representation.representation();
 	}

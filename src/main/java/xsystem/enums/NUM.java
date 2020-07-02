@@ -5,6 +5,11 @@ import java.util.HashMap;
 
 import xsystem.support.Config;
 
+/** Represents Numeral Characters in string.
+ * @author Ipsita Mohanty
+ * @version 0.0.1
+ * @since 0.0.1
+*/
 public class NUM implements CharClass {
     
 	public String representation(){

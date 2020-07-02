@@ -3,6 +3,11 @@ package xsystem.enums;
 import java.util.ArrayList;
 import java.util.Random;
 
+/** Represents a List of most seen character in a XStructure.
+ * @author Ipsita Mohanty
+ * @version 0.0.1
+ * @since 0.0.1
+*/
 public class X_OR implements XClass {
     ArrayList<String> cs;
 

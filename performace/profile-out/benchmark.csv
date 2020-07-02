@@ -1,0 +1,28 @@
+scenario,default
+version,6.3
+tasks,clean build
+value,execution
+warm-up build #1,44926
+warm-up build #2,16247
+warm-up build #3,15751
+warm-up build #4,16318
+warm-up build #5,16415
+warm-up build #6,15987
+measured build #1,16356
+measured build #2,16708
+measured build #3,16579
+measured build #4,16828
+measured build #5,16144
+measured build #6,16119
+measured build #7,16597
+measured build #8,16821
+measured build #9,16511
+measured build #10,16613
+mean,16527.6
+min,16119.0
+25th percentile,16303.0
+median,16588.0
+75th percentile,16736.25
+max,16828.0
+stddev,251.09635158197298
+confidence,0.0

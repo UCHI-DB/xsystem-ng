@@ -12,28 +12,40 @@ import xsystem.support.Utils;
 import xsystem.support.Wrapper;
 import xsystem.enums.XClass;
 
+/**Represents the Token Layer of the XStructure.
+ * @author Ipsita Mohanty
+ * @version 0.0.1
+ * @since 0.0.1
+*/
 public class Token {
 
-//Token Layer of the XStructure
-
+	/**The list of Symbols in a Token.*/
 	public ArrayList<Symbol> symbols;
 
+	/**DoneAdding*/
 	public Boolean doneAdding;
 
+	/**History of strings learned.*/
 	public ArrayList<Double> history;
 
+	/**Standard Deviation*/
 	public double stdDev;
 
+	/**Archive*/
 	public ArrayList<Double> archive;
 
 	private final boolean tryToStop = Config.tts;
 
+	/**Token String genarator*/
 	public ArrayList<String> tokenStringGenerator;
 
+	/**Score of token so far*/
 	public double scoreSoFar;
 
+	/**List of XClass representation of Token.*/
 	public ArrayList<XClass> representation;
 
+	/**Default Token constructor */
 	public Token(){
 		this.symbols = new ArrayList<>();
 		this.doneAdding = false;
@@ -45,6 +57,14 @@ public class Token {
 		this.representation = representationFunc(symbols);
 	}
 	
+	/**
+	 * Creates a Token given the following parameters
+	 * @param symbols list of Symbols
+	 * @param doneAdding boolean doneAdding
+	 * @param history history
+	 * @param stdDev standard deviation
+	 * @param archive archive
+	 */
 	public Token(ArrayList<Symbol> symbols, Boolean doneAdding, ArrayList<Double> history, double stdDev, ArrayList<Double> archive) {
 		this.symbols = symbols;
 		this.stdDev = stdDev;
@@ -64,6 +84,17 @@ public class Token {
 		}
 	}
 
+	/**
+	 * Creates a Token given all parameters
+	 * @param symbols list of Symbols
+	 * @param doneAdding boolean doneAdding
+	 * @param history history
+	 * @param stdDev standard deviation
+	 * @param archive archive
+	 * @param tokenStringGenerator tokenStringGenerator
+	 * @param scoreSoFar scoreSoFar
+	 * @param representation XClass representation
+	 */
 	@JsonCreator
 	public Token(@JsonProperty("symbols") ArrayList<Symbol> symbols, @JsonProperty("doneAdding") Boolean doneAdding, 
 	@JsonProperty("history") ArrayList<Double> history,@JsonProperty("stdDev") double stdDev,
@@ -81,72 +112,137 @@ public class Token {
 		this.representation = representation;
     }
 	
-	// Getters and Setters
-
+	/**
+	 * Gets the list of Symbols in Token
+	 * @return list of symbols
+	 */
 	public ArrayList<Symbol> getSymbols() {
 		return symbols;
 	}
 
+	/**
+	 * Sets Symbols in Token
+	 * @param symbols Symbol List
+	 */
 	public void setSymbols(ArrayList<Symbol> symbols) {
 		this.symbols = symbols;
 	}
 
+	/**
+	 * Gets doneAdding
+	 * @return doneAdding
+	 */
 	public Boolean getDoneAdding() {
 		return doneAdding;
 	}
 
+	/**
+	 * Sets the doneAddding instance variable
+	 * @param doneAdding boolean doneAdding
+	 */
 	public void setDoneAdding(Boolean doneAdding) {
 		this.doneAdding = doneAdding;
 	}
 
+	/**
+	 * Gets the history
+	 * @return history
+	 */
 	public ArrayList<Double> getHistory() {
 		return history;
 	}
 
+	/**
+	 * Sets the history
+	 * @param history history
+	 */
 	public void setHistory(ArrayList<Double> history) {
 		this.history = history;
 	}
 
+	/**
+	 * Gets the Standard Deviation
+	 * @return standard deviation
+	 */
 	public double getStdDev() {
 		return stdDev;
 	}
 
+	/**
+	 * Sets the Standard Deviation
+	 * @param stdDev Standard Deviation
+	 */
 	public void setStdDev(double stdDev) {
 		this.stdDev = stdDev;
 	}
 
+	/**
+	 * Gets the Archive
+	 * @return archive
+	 */
 	public ArrayList<Double> getArchive() {
 		return archive;
 	}
 
+	/**
+	 * Sets the Archive
+	 * @param archive Archive
+	 */
 	public void setArchive(ArrayList<Double> archive) {
 		this.archive = archive;
 	}
 
+	/**
+	 * Gets the Token String generator
+	 * @return TokenString generator
+	 */
 	public ArrayList<String> getTokenStringGenerator() {
 		return tokenStringGenerator;
 	}
 
+	/**
+	 * Sets the TokenString generator
+	 * @param tokenStringGenerator TokenString Generator
+	 */
 	public void setTokenStringGenerator(ArrayList<String> tokenStringGenerator) {
 		this.tokenStringGenerator = tokenStringGenerator;
 	}
 
+	/**
+	 * Gets score so far
+	 * @return scoreSoFar
+	 */
 	public double getScoreSoFar() {
 		return scoreSoFar;
 	}
 
+	/**
+	 * Sets score so far
+	 * @param scoreSoFar scoreSoFar
+	 */
 	public void setScoreSoFar(double scoreSoFar) {
 		this.scoreSoFar = scoreSoFar;
 	}
 
+	/**
+	 * Gets representation
+	 * @return representation of Token
+	 */
 	public ArrayList<XClass> getRepresentation() {
 		return representation;
 	}
 
+	/**
+	 * Sets the representation of a Token
+	 * @param representation XClass representation
+	 */
 	public void setRepresentation(ArrayList<XClass> representation) {
 		this.representation = representation;
 	}
 
+	/**
+	 * @return tryToStop
+	 */
 	public boolean isTryToStop() {
 		return tryToStop;
 	}
@@ -187,6 +283,11 @@ public class Token {
 		}
 	}
 
+	/**
+	 * Learns a given String into a Token
+	 * @param token given String
+	 * @return learned Token
+	 */
 	public Token learnToken(String token){
 		if(doneAdding)
 			return this;
@@ -234,6 +335,10 @@ public class Token {
 		}
 	}
 
+	/**
+	 * Reopen a learned Token
+	 * @return the reopend Token
+	 */
 	public Token reopened(){
 		ArrayList<Double> _archive = new ArrayList<>();
 		_archive.addAll(archive);
@@ -242,6 +347,11 @@ public class Token {
 		return new Token(symbols, false, new ArrayList<>(), stdDev, _archive);
 	}
 	
+	/**
+	 * Compute score of a String within a Token
+	 * @param token given String whose score is to be calculated
+	 * @return computed score
+	 */
 	public double scoreToken(String token){
 		double score = 0;
 
@@ -251,6 +361,10 @@ public class Token {
 		return score;
 	}
 
+	/**
+	 * Gives a random Token
+	 * @return String representation of a random Token
+	 */
 	public String randomToken(){
 		String res = "";
 		for(XClass x : representation){
@@ -259,6 +373,9 @@ public class Token {
 		return res;
 	}
 
+	/** Converts Token to String
+	 * @return string representation of a Token
+	*/
 	public String toString(){
 		String res = "";
 		for(XClass x : representation){

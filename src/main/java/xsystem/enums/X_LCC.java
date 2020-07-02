@@ -5,6 +5,11 @@ import java.util.Random;
 
 import xsystem.support.Config;
 
+/** Represents LowerCase Character in a XStructure.
+ * @author Ipsita Mohanty
+ * @version 0.0.1
+ * @since 0.0.1
+*/
 public class X_LCC implements XClass {
 
 	public String representation(){

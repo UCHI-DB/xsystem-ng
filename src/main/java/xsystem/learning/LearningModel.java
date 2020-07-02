@@ -23,12 +23,26 @@ import org.slf4j.LoggerFactory;
 
 import xsystem.XStructure;
 
+/**Represents the Learning Model class
+ * @author Ipsita Mohanty
+ * @version 0.0.1
+ * @since 0.0.1
+*/
 public class LearningModel {
 
     private final static Logger LOG = LoggerFactory.getLogger(LearningModel.class.getName());
 
+    /** Directory with Learned XStructs for dataset with correct labels */
     public final static String defaultXLabelRef = "src/main/resources/Learned";
 
+    /**Default Constructor */
+    public LearningModel(){}
+
+    /**
+     * Given an input CSV file/folder, this learns the XStructs for each column and stores in a specified JSON file
+     * @param inputFolder path of input CSV file or directory containing CSV files
+     * @param outputJsonFile path of JSON file where you want to store the learned XStructures
+     */
     public void learnStructs(String inputFolder, String outputJsonFile) {
 
         File folder = new File(inputFolder);
@@ -151,6 +165,12 @@ public class LearningModel {
         }
     }
 
+    /**
+     * Given a list of string inputs, returns the computed label from a given JSON file/folder of learned XStructs
+     * @param strList list of string inputs
+     * @param referenceFilePath given JSON file/folder of learned XStructs
+     * @return computed label
+     */
     public String labelAssignment(ArrayList<String> strList, String referenceFilePath){
         File folder = new File(referenceFilePath);
 
@@ -205,6 +225,12 @@ public class LearningModel {
         return result;
     }
 
+    /**
+     * Given a regex-type file/folder, assigns labels to JSON file/folder with learned XStructs
+     * @param sampleRegexFolderPath file/folder containing Regex with the represented data type
+     * @param learnedXStructsJSONfolderpath learned XStructures JSON file/folder path
+     * @param outFile output JSON file with computed labels after refering the regex provided
+     */
     public void labelAssignmentWithRegex(String sampleRegexFolderPath, String learnedXStructsJSONfolderpath, String outFile){
         File sampleRegexFolder = new File(sampleRegexFolderPath);
         ArrayList<Pair<String, String>> regexList = new ArrayList<>();
@@ -317,6 +343,11 @@ public class LearningModel {
         }
     }
 
+    /**
+     * Given a JSON file/folder path, retruns the list of XStructs contained in them
+     * @param path the JSON file/folder path from which XStructs are to be read
+     * @return List of XStructs and their types
+     */
     public ArrayList<XStructType> readXStructsfromJSON(String path) {
         File folder = new File(path);
         ObjectMapper mapper = new ObjectMapper();

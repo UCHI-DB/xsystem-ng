@@ -21,9 +21,12 @@ import xsystem.support.Config;
 import xsystem.support.Utils;
 import xsystem.support.Wrapper;
 
+/**Represents The XStructure!!
+ * @author Ipsita Mohanty
+ * @version 0.0.1
+ * @since 0.0.1
+*/
 public class XStructure {
-
-    //The XStructure!!
 
     private final HashMap<Branch, Double> branches;
 
@@ -33,12 +36,16 @@ public class XStructure {
 
     private final ArrayList<Double> history;
 
+    /** The Tokens Generator */
     public ArrayList<String> tokensGenerator;
 
+    /** The Hinges Generator */
     public ArrayList<String> hingesGenerator;
 
+    /** The MinHash String Generator */
     public ArrayList<String> minHashStringGenerator;
 
+    /**Default XStructure constructor*/
     @JsonCreator
     public XStructure(){
         this.branches = new HashMap<>();
@@ -50,6 +57,14 @@ public class XStructure {
         this.minHashStringGenerator = minHashStringGenerator(tokensGenerator, hingesGenerator);
 
     }
+
+    /**
+     * Creates a XStructure with given parameters
+     * @param _lines lines learned
+     * @param _branches branches contained in XStructure
+     * @param _bThresh Branching Threshold
+     * @param _history history
+     */
     public XStructure(ArrayList<String> _lines, HashMap<Branch, Double> _branches, double _bThresh, ArrayList<Double> _history){
         this.branches = _branches;
         this.lines = (Config.tts) ? _lines : new ArrayList<String>();
@@ -60,6 +75,16 @@ public class XStructure {
         this.minHashStringGenerator = minHashStringGenerator(tokensGenerator(_branches), hingesGenerator(_branches));
     }
 
+    /**
+     * Creates a XStructure given all parameters
+     * @param lines lines learned
+     * @param branches branches contained in XStructure
+     * @param branchingThreshold Branching Threshold
+     * @param history history
+     * @param tokensGenerator Tokens Generator
+     * @param hingesGenerator Hinges Generator
+     * @param minHashStringGenerator MinHash String Generator
+     */
     @JsonCreator
     public XStructure(@JsonProperty("lines") ArrayList<String> lines, @JsonProperty("branches") HashMap<Branch, Double> branches, 
     @JsonProperty("branchingThreshold") double branchingThreshold, @JsonProperty("history") ArrayList<Double> history,
@@ -75,42 +100,82 @@ public class XStructure {
         this.minHashStringGenerator = minHashStringGenerator;
     }
 
+    /**
+     * Gets the Tokens Generator
+     * @return Tokens Generator
+     */
     public ArrayList<String> getTokensGenerator() {
 		return tokensGenerator;
 	}
 
+    /**
+     * Sets the Tokens Generator parameter
+     * @param tokensGenerator Tokens Generator
+     */
 	public void setTokensGenerator(ArrayList<String> tokensGenerator) {
 		this.tokensGenerator = tokensGenerator;
 	}
 
+    /**
+     * Gets the Hinges Generator
+     * @return Hinges Generator
+     */
 	public ArrayList<String> getHingesGenerator() {
 		return hingesGenerator;
 	}
 
+    /**
+     * Sets the Hinges Generator parameter
+     * @param hingesGenerator Hinges Generator
+     */
 	public void setHingesGenerator(ArrayList<String> hingesGenerator) {
 		this.hingesGenerator = hingesGenerator;
 	}
 
+    /**
+     * Gets the MinHash String Generator
+     * @return MinHash String Generator
+     */
 	public ArrayList<String> getMinHashStringGenerator() {
 		return minHashStringGenerator;
 	}
 
+    /**
+     * Sets the MinHash String Generator parameter
+     * @param minHashStringGenerator MinHash String Generator
+     */
 	public void setMinHashStringGenerator(ArrayList<String> minHashStringGenerator) {
 		this.minHashStringGenerator = minHashStringGenerator;
 	}
 
+    /**
+     * Gets the Branches contained in the XStruct
+     * @return branch list with scores
+     */
 	public HashMap<Branch, Double> getBranches() {
 		return branches;
 	}
 
+    /**
+     * Gets the lines represented by a XStruct
+     * @return list of lines
+     */
 	public ArrayList<String> getLines() {
 		return lines;
 	}
 
+    /**
+     * Gets the Branching Threshhold
+     * @return Branching Threshhold
+     */
 	public double getBranchingThreshold() {
 		return branchingThreshold;
 	}
 
+    /**
+     * Gets the history of lines learned
+     * @return history
+     */
 	public ArrayList<Double> getHistory() {
 		return history;
 	}
@@ -187,6 +252,11 @@ public class XStructure {
         return result;
     }
 
+    /**
+     * Adds/Learns a line into the XStruct
+     * @param line the line to be learned
+     * @return XStructure and boolean representing if max sample size is reached or not
+     */
     public Pair<XStructure, Boolean> addLine(String line){
         Triplet<HashMap<Branch, Double>, Branch, Double> param = findRightBranch(line);
 
@@ -221,6 +291,11 @@ public class XStructure {
         return Pair.with(xstruct.trim(), bool);
     }
 
+    /**
+     * Adds/Learns a list of lines into the XStruct
+     * @param lines line list to be learned
+     * @return XStructure after learning the given lines
+     */
     public XStructure addNewLines(ArrayList<String> lines){
         if(Config.tts){
             ArrayList<Pair<XStructure, Boolean>> scannedLines = new ArrayList<>(); 
@@ -375,6 +450,11 @@ public class XStructure {
         }
     }
 
+    /**
+     * Generates n number of random strings from a XStructure
+     * @param n nuber of random strings you want to generate
+     * @return list of random strings
+     */
     public ArrayList<String> generateStrings(int n) {
         ArrayList<String> result = new ArrayList<>();
         for(int i = 0; i<n; i++){
@@ -391,6 +471,9 @@ public class XStructure {
         return result;
     }
 
+    /** Converts XStructure to String
+	 * @return string representation of a XStructure
+	*/
     public String toString(){
         ArrayList<String> reslst = new ArrayList<>();
 
@@ -402,7 +485,11 @@ public class XStructure {
         return String.join("|", reslst);
     }
 
-    // Comparison
+    /**
+     * Compare one XStruct to other
+     * @param other the other XStruct
+     * @return the computed subset score
+     */
     public double subsetScore(XStructure other) {
         Set<Branch> brLst = other.branches.keySet();
         double tscore = 0.0;
@@ -421,7 +508,11 @@ public class XStructure {
         return tscore/sum;
     }
 
-    // Outlier score for a given string
+    /**
+     * Computes the outlier score for a given string
+     * @param str input string
+     * @return outlier score
+     */
     public double computeOutlierScore(String str){
         double sum = 0.0;
 
@@ -435,6 +526,11 @@ public class XStructure {
         return outlierScore;
     }
 
+    /**
+     * Merge two XStructures
+     * @param other the other XStructures
+     * @return XStruct after merging
+     */
     public XStructure mergeWith(XStructure other){
         HashMap<Branch, Double> _branches = new HashMap<>();
         _branches.putAll(branches);
@@ -449,6 +545,11 @@ public class XStructure {
         return (x.subsetScore(y) + y.subsetScore(x))/2;
     }
 
+    /**
+     * Merge a list of XStructs together
+     * @param xs list of XStructs to be merged
+     * @return result XStruct after merging
+     */
     public XStructure mergeMultiple(ArrayList<XStructure> xs){
         XStructure merged = new XStructure();
 
