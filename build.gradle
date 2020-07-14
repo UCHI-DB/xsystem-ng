@@ -9,7 +9,6 @@
 plugins {
     // Apply the java-library plugin to add support for Java Library
     id 'java-library'
-    id 'distribution'
 }
 
 repositories {
@@ -49,16 +48,19 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     testImplementation group: 'junit', name: 'junit', version: '4.+'
 
+    //Microbenchmarking
+    testCompile group: 'org.openjdk.jmh', name: 'jmh-core', version: '1.21'
+    testCompile group: 'org.openjdk.jmh', name: 'jmh-generator-annprocess', version: '1.21'
+    testAnnotationProcessor "org.openjdk.jmh:jmh-generator-annprocess:1.21"
 }
 
-version = '0.1.0'
 
 jar {
     manifest {
         attributes('Implementation-Title': project.name,
                    'Implementation-Version': project.version)
     }
-} 
+}
 
 test {
     useJUnit()
