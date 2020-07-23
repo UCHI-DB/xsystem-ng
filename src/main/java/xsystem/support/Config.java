@@ -10,42 +10,14 @@ import java.util.ArrayList;
 public class Config {
 
     /**Maximum Branches in a XStructure */
-    public static int maxBranches = 7;
+    public final static int maxBranches = 7;
 
     /** Branching Seed*/
-    public static double branchingSeed = 0.1;
+    public final static double branchingSeed = 0.1;
 
     /** List of Special Characters*/
-    public static char[] splChars;
-
-    /** List of UpperCase Characters*/
-    public static char[] upperCaseChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
-
-    /** List of LowerCase Characters*/
-    public static char[] lowerCaseChar = "abcdefghijklmnopqrstuvwxyz".toCharArray();
-
-    /** List of Numeric Characters*/
-    public static char[] numbers = "0123456789".toCharArray();
-
-    /** Increment*/
-    public static int inc = 100;
-
-    /** tts*/
-    public static Boolean tts = true;
-
-    /** capturePct*/
-    public static Double capturePct = 0.8;
-    
-
-    public Config(){
-        Config.splChars = getsplchars();
-    }
-    
-    private char[] getsplchars(){
-
-        if(splChars != null)
-            return splChars;
-            
+    public final static char[] splChars;
+    static {
         ArrayList<Character> r = new ArrayList<Character>();
         for(int i = 0; i<=47; i++){
             char c = (char)i;
@@ -67,9 +39,26 @@ public class Config {
         for(int i = 0; i<r.size(); i++){
             res[i] = r.get(i).charValue();
         }
-        return res;
-
+        splChars = res;
     }
+
+    /** List of UpperCase Characters*/
+    public final static char[] upperCaseChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
+
+    /** List of LowerCase Characters*/
+    public final static char[] lowerCaseChar = "abcdefghijklmnopqrstuvwxyz".toCharArray();
+
+    /** List of Numeric Characters*/
+    public final static char[] numbers = "0123456789".toCharArray();
+
+    /** Increment*/
+    public final static int inc = 100;
+
+    /** tts*/
+    public final static Boolean tts = true;
+
+    /** capturePct*/
+    public final static Double capturePct = 0.8;
 
     /**
      * Computes the needed Sample Size

@@ -186,7 +186,7 @@ public class LearningModel {
                     List<XStructType> structs = mapper.readValue(file, new TypeReference<List<XStructType>>(){});
 
                     for(XStructType struct : structs){
-                        double particularScore = struct.xStructure.subsetScore(toBeAssigned);
+                        double particularScore = struct.xStructure.compareTwo(toBeAssigned, struct.xStructure);
                         scoreLst.add(particularScore);
                     }
 
@@ -205,7 +205,7 @@ public class LearningModel {
                 List<XStructType> structs = mapper.readValue(folder, new TypeReference<List<XStructType>>(){});
 
                 for(XStructType struct : structs){
-                    double particularScore = struct.xStructure.subsetScore(toBeAssigned);
+                    double particularScore = struct.xStructure.compareTwo(toBeAssigned, struct.xStructure);
                     scoreLst.add(particularScore);
                 }
 

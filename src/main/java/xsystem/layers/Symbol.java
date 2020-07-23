@@ -262,7 +262,7 @@ public class Symbol {
 
 		else{
 			HashMap<Character, Double> resMap = new HashMap<>();
-			resMap.putAll(Utils.asciiMap());
+			resMap.putAll(Utils.asciiMap);
 			resMap.putAll(_charHist);
 
 			if(!Utils.significant(new ArrayList<Double>(resMap.values())))

@@ -18,6 +18,13 @@ import xsystem.enums.UCC;
 */
 public class Utils {
 
+    public final static HashMap<Character, Double> asciiMap;
+    static{
+        HashMap<Character, Double> asciMap = new HashMap<>();
+        for(int i=0; i<=256; i++) asciMap.put((char)i, 0.0);
+        asciiMap = asciMap;
+    }
+
     /**
      * Returns Character Class of given character
      * @param c given character
@@ -53,63 +60,24 @@ public class Utils {
         }
     }
 
-    /** The ASCII Map
-     * @return the ASCII value HashMap
-    */
-    public static HashMap<Character, Double> asciiMap() {
-        HashMap<Character, Double> asciMap = new HashMap<>();
-        for(int i=0; i<=256; i++) asciMap.put((char)i, 0.0);
-        return asciMap;
-    }
-
-    /**
-     * Round-robin iterator for merging streams
-     * @param streams streams
-     * @return merged stream list
-     */
+     /**
+      * Round-robin iterator for merging streams
+      * @param streams streams
+      * @return merged stream list
+      */
     public static ArrayList<Wrapper> mergeStreams(ArrayList<ArrayList<Wrapper>> streams){
-        int next = 0;
-        Boolean done = true;
-        return mergeStreams(streams, next, done);
-    }
-
-    /**
-     * Round-robin iterator for merging streams
-     * @param streams streams
-     * @param next next
-     * @return merged stream list
-     */
-    public static ArrayList<Wrapper> mergeStreams(ArrayList<ArrayList<Wrapper>> streams, int next) {
-        Boolean done = true;
-        return mergeStreams(streams, next, done);
-    }
-
-    /**
-     * Round-robin iterator for merging streams
-     * @param streams streams
-     * @param next next
-     * @param done done
-     * @return merged stream list
-     */
-    public static ArrayList<Wrapper> mergeStreams(ArrayList<ArrayList<Wrapper>> streams, int next, Boolean done) {
-        if(streams.isEmpty())
-            return new ArrayList<Wrapper>();
-        else{
-            if(streams.size() - next == 1 && streams.get(next).isEmpty() && done)
-                return new ArrayList<>();
-            else if(streams.size() - next == 1 && streams.get(next).isEmpty() && !done)
-                return mergeStreams(streams, (next+1)%streams.size());
-            else if(streams.get(next).isEmpty())
-                return mergeStreams(streams, (next+1)%streams.size(), done);
-            else{
-                ArrayList<Wrapper> res = new ArrayList<>();
-                res.add(streams.get(next).get(0));
-                ArrayList<Wrapper> newVal = streams.get(next);
-                newVal.remove(0);
-                streams.set(next, newVal);
-                res.addAll(mergeStreams(streams, (next+1)%streams.size(), false));
-                return res;
+        ArrayList<Wrapper> res = new ArrayList<>();
+        Boolean updated = true;
+        while (updated){
+            updated = false;
+            for( ArrayList<Wrapper> lst : streams){
+                if(lst.size()>0){
+                    res.add(lst.get(0));
+                    lst.remove(0);
+                    updated = true;
+                }
             }
         }
+        return res;
     }
 }
