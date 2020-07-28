@@ -38,3 +38,8 @@ build/
 
 # Eclipse project files
 *.project
+
+# Idea files
+xsystem-ng.iml
+xsystem-ng.ipr
+xsystem-ng.iws
