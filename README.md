@@ -43,6 +43,7 @@ $> ./gradlew test
 
 * **Ipsita Mohanty**
 * **Raul Castro Fernandez**
-This Java XSystem implementation is based on [this
-paper](https://ieeexplore.ieee.org/abstract/document/8509235?casa_token=5yDC4o3mpNwAAAAA:ZnOFDnD0aoOIJLBsttKuBCC_VAUWCJ27OGQxZS0xszg5vo2vGVmg-_FT8jY6sWCNrcsaK671vLg)
+
+This XSystem implementation is based on [this
+paper].(https://ieeexplore.ieee.org/abstract/document/8509235?casa_token=5yDC4o3mpNwAAAAA:ZnOFDnD0aoOIJLBsttKuBCC_VAUWCJ27OGQxZS0xszg5vo2vGVmg-_FT8jY6sWCNrcsaK671vLg)
 
