@@ -91,5 +91,5 @@ public class XSystemImpl implements XSystem {
         XStructure head = XStructLst.get(0);
         XStructLst.remove(0);
         return head.mergeMultiple(XStructLst);
-    }m ne 
+    }
 }
