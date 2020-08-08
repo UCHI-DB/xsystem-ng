@@ -1,21 +1,35 @@
 package xsystem;
 
-import java.util.Iterator;
-import java.util.List;
+import org.javatuples.Pair;
+import xsystem.layers.XStructure;
+
+import java.util.ArrayList;
 import java.util.regex.Pattern;
 
 public interface XSystem {
 
-    XStructure build(Iterator<String> data);
+    public XStructure build(ArrayList<String> data);
 
-    Iterator<String> generate(XStructure pattern);
+    public ArrayList<String> generate(XStructure pattern, int n);
 
-    List<String> generate(XStructure pattern, int limit);
+    public double similarity(XStructure pattern, String value);
 
-    boolean match(XStructure pattern, String value);
+    public double similarity(XStructure pattern1, XStructure pattern2);
 
-    boolean match(XStructure pattern1, XStructure pattern2);
+    public boolean match(XStructure pattern1, Pattern regex);
 
-    boolean match(XStructure pattern1, Pattern regex);
+    public void learnXStructs(String inputFolder, String outputJSONfile);
+
+    public ArrayList<Pair<XStructure, String>> readXStructswthType(String inputJSONfolder);
+
+    public void labelAssignwthRegex(String sampleRegexFolderPath, String learnedXStructsJSONfolderpath, String outFile);
+
+    public String labelAssignmentwthXStruct(ArrayList<String> strList, String referenceFilePath);
+
+    public double computeOutlierScore(XStructure pattern, String str);
+
+    public XStructure mergetwoXStructs(XStructure first, XStructure second);
+
+    public XStructure mergeMultipleXStructs(ArrayList<XStructure> XStructLst);
 
 }

@@ -10,7 +10,7 @@ import org.openjdk.jmh.runner.RunnerException;
 import org.openjdk.jmh.runner.options.Options;
 import org.openjdk.jmh.runner.options.OptionsBuilder;
 import xsystem.CSVGenerator;
-import xsystem.XStructure;
+import xsystem.layers.XStructure;
 import xsystem.learning.LearningModel;
 import xsystem.learning.XStructType;
 

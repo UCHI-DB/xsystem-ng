@@ -21,7 +21,7 @@ import org.javatuples.Pair;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import xsystem.XStructure;
+import xsystem.layers.XStructure;
 
 /**Represents the Learning Model class
  * @author Ipsita Mohanty

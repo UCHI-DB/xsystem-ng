@@ -1,4 +1,4 @@
-package xsystem;
+package xsystem.layers;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -16,7 +16,6 @@ import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics;
 import org.javatuples.Pair;
 import org.javatuples.Triplet;
 
-import xsystem.layers.Branch;
 import xsystem.support.Config;
 import xsystem.support.Utils;
 import xsystem.support.Wrapper;

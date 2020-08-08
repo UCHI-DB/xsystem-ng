@@ -1,6 +1,6 @@
 package xsystem.learning;
 
-import xsystem.XStructure;
+import xsystem.layers.XStructure;
 
 /**Represents the XStructType class, which acts as a Wrapper class for a XStructure and the type of data it represents
  * @author Ipsita Mohanty
