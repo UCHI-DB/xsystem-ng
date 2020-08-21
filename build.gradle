@@ -11,8 +11,6 @@ plugins {
     id 'java-library'
     id 'idea'
     id 'eclipse'
-    id 'com.github.johnrengelman.shadow' version '6.0.0'
-    id 'java'
 }
 
 repositories {
@@ -58,7 +56,6 @@ dependencies {
     testAnnotationProcessor "org.openjdk.jmh:jmh-generator-annprocess:1.21"
 }
 
-
 jar {
     manifest {
         attributes('Implementation-Title': project.name,
@@ -69,7 +66,8 @@ jar {
 test {
     useJUnit()
     testLogging {
-      showStandardStreams = true
+        showStandardStreams = false
+        events "passed", "skipped", "failed"
     }
     reports {
         junitXml.enabled = false

@@ -456,16 +456,22 @@ public class XStructure {
      */
     public ArrayList<String> generateStrings(int n) {
         ArrayList<String> result = new ArrayList<>();
-        for(int i = 0; i<n; i++){
+        for(int i = 0; i<n; i++) {
             double randomIndex = Math.random();
             double tSum = branches.values().stream().mapToDouble(f -> f.doubleValue()).sum();
             double cumSum = 0.0;
-
-            for(Branch b : branches.keySet()){
+            Boolean flag = false;
+            for (Branch b : branches.keySet()) {
                 cumSum += branches.get(b);
-                if(cumSum/tSum > randomIndex)
+                if (cumSum / tSum > randomIndex)
                     result.add(b.generateRandomStrings(1).get(0));
+                if (result.size() == n) {
+                    flag = true;
+                    break;
+                }
             }
+            if (flag)
+                break;
         }
         return result;
     }

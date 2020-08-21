@@ -9,12 +9,11 @@ import xsystem.support.Config;
 import java.util.ArrayList;
 import java.util.regex.Pattern;
 
-public class XSystemImpl implements XSystem {
+public class XSystemImplementation implements XSystem {
 
     @Override
     public XStructure build(ArrayList<String> data){
-        XStructure res = new XStructure();
-        res.addNewLines(data);
+        XStructure res = (new XStructure()).addNewLines(data);
         return res;
     }
 
@@ -25,12 +24,13 @@ public class XSystemImpl implements XSystem {
 
     @Override
     public double similarity(XStructure pattern, String value){
-        XStructure x = new XStructure();
+        if(value.isEmpty())
+            return 0;
         int req = Config.maxBranches;
         ArrayList<String> lines = new ArrayList<>();
         while(req-- >= 0)
             lines.add(value);
-        x.addNewLines(lines);
+        XStructure x = (new XStructure()).addNewLines(lines);
         return pattern.compareTwo(pattern, x);
     }
 
