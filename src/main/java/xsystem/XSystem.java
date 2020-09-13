@@ -30,6 +30,6 @@ public interface XSystem {
 
     public XStructure mergetwoXStructs(XStructure first, XStructure second);
 
-    public XStructure mergeMultipleXStructs(ArrayList<XStructure> XStructLst);
+    public XStructure mergeMultipleXStructs(ArrayList<XStructure> xstructLst);
 
 }
