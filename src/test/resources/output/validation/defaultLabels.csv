@@ -29,7 +29,7 @@
 "DataLabels from file table1.csv"
 "Phone Number0","PhoneNumber"
 "Date1","Date"
-"Coordinates2","Names"
+"Coordinates2","coordinates"
 "Email3","EmailId"
 "Phone Number4","PhoneNumber"
 "Date5","Date"
